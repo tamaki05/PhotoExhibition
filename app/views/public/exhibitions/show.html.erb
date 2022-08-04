@@ -1,0 +1,5 @@
+<p><%= image_tag @exhibition.image, size: "200x200" %></p>
+<p><%= @exhibition.title %></p>
+<p><%= @exhibition.introduction %></p>
+<p><%= link_to "編集", edit_exhibition_path(@exhibition.id) %></p>
+<p><%= link_to "削除", exhibition_path(@exhibition.id), method: :delete, "date-confirm" => "本当に削除しますか？" %></p>

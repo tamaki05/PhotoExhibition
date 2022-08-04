@@ -1,0 +1,5 @@
+<h1>Photo Gallery</h1>
+
+<% @exhibition.each do |exhibition| %>
+    <%= image_tag exhibition.image, size: "200x200" %>
+<% end %>
