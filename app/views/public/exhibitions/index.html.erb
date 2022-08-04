@@ -1,5 +1,15 @@
-<h1>Photo Gallery</h1>
+<div class=" d-flex align-items-center justify-content-center pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-11 col-md-8 col-lg-6 mx-auto">
+        <div class="text-center">
+          <h1>Photo Gallery</h1>
 
-<% @exhibition.each do |exhibition| %>
-    <%= image_tag exhibition.image, size: "200x200" %>
-<% end %>
+          <% @exhibition.each do |exhibition| %>
+              <%= image_tag exhibition.image, size: "200x200" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

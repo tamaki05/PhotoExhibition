@@ -1,8 +1,20 @@
-<h1>展示する</h1>
+<div class=" d-flex align-items-center justify-content-center pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-11 col-md-8 col-lg-6 mx-auto">
+        <div class="card shadow">
+          <div class="card-body text-center">
+            <h1>展示する</h1>
 
-  <%= form_with model: @exhibition do |f| %>
-    <h4>展示写真</h4><%= f.file_field :image, accept: "image/*" %>
-    <h4>タイトル</h4><%= f.text_field :title %>
-    <h4>紹介文</h4><%= f.text_field :introduction %><br>
-    <%= f.submit '展示する' %>
-  <% end %>
+              <%= form_with model: @exhibition do |f| %>
+                <h4>展示写真</h4><%= f.file_field :image, accept: "image/*" %>
+                <h4>タイトル</h4><%= f.text_field :title %>
+                <h4>紹介文</h4><%= f.text_field :introduction %><br>
+                <%= f.submit '展示する' %>
+              <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
