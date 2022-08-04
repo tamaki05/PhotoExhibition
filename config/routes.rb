@@ -15,6 +15,9 @@ Rails.application.routes.draw do
     root :to => 'homes#top'
     get "about" => 'homes#about'
     resources :exhibitions, only:[:index, :new, :create, :show, :edit, :update, :destroy]
+    resources :users, only:[:index, :show, :edit, :update]
+    get 'users/unsubscribe' => 'users#unsubscribe'
+    patch 'users/withdraw' => 'users#withdraw'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
@@ -24,4 +27,11 @@ end
   #   get 'exhibitions/show'
   #   get 'exhibitions/new'
   #   get 'exhibitions/edit'
+  # end
+
+  # namespace :public do
+  #   get 'users/index'
+  #   get 'users/show'
+  #   get 'users/edit'
+  #   get 'users/unsubscribe'
   # end

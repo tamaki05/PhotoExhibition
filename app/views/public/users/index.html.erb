@@ -1,0 +1,13 @@
+<div class=" d-flex align-items-center justify-content-center pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-11 col-md-8 col-lg-6 mx-auto">
+        <h4>展示者一覧</h4>
+
+        <% @user.each do |user| %>
+          <%= user.name %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
