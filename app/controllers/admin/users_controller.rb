@@ -1,23 +1,16 @@
-class Public::UsersController < ApplicationController
+class Admin::UsersController < ApplicationController
   def index
-    @user = User.all
+    @users = User.all
   end
 
   def show
-  end
-
-  def edit
     @user = User.find(params[:id])
   end
 
-  def update
+  def edit
   end
 
-  def unsubscribe
-  end
-
-  def withdraw
-  end
+  private
 
   def user_params
     params.require(:user).permit(:name, :email)

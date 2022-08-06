@@ -1,0 +1,26 @@
+<div class=" d-flex align-items-center justify-content-center pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-11 col-md-8 col-lg-6 mx-auto">
+        <h1>出展者一覧</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-11 col-md-8 col-lg-6 mx-auto">
+        <table>
+          <tr>
+            <th>name</th>
+            <th>email</th>
+            <th>user status</th>
+          </tr>
+          <% @users.each do |user| %>
+          <tr>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
