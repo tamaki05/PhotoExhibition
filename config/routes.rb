@@ -15,9 +15,9 @@ Rails.application.routes.draw do
     root :to => 'homes#top'
     get "about" => 'homes#about'
     resources :exhibitions, only:[:index, :new, :create, :show, :edit, :update, :destroy]
-    resources :users, only:[:index, :show, :edit, :update]
     get 'users/unsubscribe' => 'users#unsubscribe'
     patch 'users/withdraw' => 'users#withdraw'
+    resources :users, only:[:index, :show, :edit, :update]
   end
 
   namespace :admin do

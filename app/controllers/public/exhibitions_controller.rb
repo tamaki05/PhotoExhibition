@@ -1,6 +1,7 @@
 class Public::ExhibitionsController < ApplicationController
   def index
-    @exhibition = Exhibition.all
+    @user = current_user
+    @exhibition = @user.exhibitions.all
   end
 
   def show

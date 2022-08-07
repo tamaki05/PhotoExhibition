@@ -2,8 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
-        <h1>Public::Users#show</h1>
-        <p>Find me in app/views/public/users/show.html.erb</p>
+        <h1>マイページ</h1>
+          <%= link_to '展示一覧', exhibitions_path %>
+          <%= @user.nickname %>
+          <%= @user.profile %>
+          <%= @user.extemal_link %>
+          <%= link_to '会員情報編集', edit_user_path, class: "btn btn-sm btn-success" %>
       </div>
     </div>
   </div>

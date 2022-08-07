@@ -8,10 +8,12 @@
               <%= form_with model: @user do |f| %>
                 <p><%= f.text_field :name %></p>
                 <p><%= f.text_field :email %></p>
-                <p><%#= f.text_field :profile %></p>
+                <p><%= f.text_field :nickname %></p>
+                <p><%= f.text_field :profile %></p>
+                <p><%= f.text_field :extemal_link%></p>
                 <%= f.submit '保存' %>
-                <%= f.submit '退会' %>
               <% end %>
+                <%= link_to '退会', users_unsubscribe_path, class: "btn btn-sm btn-success" %>
           </div>
         </div>
       </div>

@@ -3,12 +3,13 @@
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
         <div class="card shadow">
-          <div class="card-body text-secondary text-center">
-            <h4>本当に退会しますか？</h4>
+          <div class="card-body text-center">
+            <h4><strong>本当に退会しますか？</strong></h4>
             <p>退会すると、会員登録情報や<br>
                 展示中の写真がサイトから消えてしまいます。<br>
-                退会する場合は、「退会する」をクリックしてください。</p>
-            <%= link_to "マイページに戻る", user_path(current_user.id) %>
+                退会する場合は「退会する」をクリックしてください。</p>
+            <%= link_to "マイページに戻る", user_path(current_user.id), class: "btn btn-outline-primary" %>
+            <%= link_to "退会する", users_withdraw_path, method: :patch, class: "btn btn-outline-danger" %>
           </div>
         </div>
       </div>

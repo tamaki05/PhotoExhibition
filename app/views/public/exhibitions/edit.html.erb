@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
         <div class="card shadow">
-          <div class="card-body text-secondary text-center">
+          <div class="card-body text-center">
             <h1>編集画面</h1>
 
             <%= form_with model: @exhibition do |f| %>
@@ -11,7 +11,7 @@
               <%= f.text_field :title %>
 
               <p>紹介文</p>
-              <%= f.text_field :introduction %>
+              <%= f.text_field :introduction %><br>
 
               <%= f.submit '更新' %>
 
