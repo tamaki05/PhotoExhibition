@@ -6,10 +6,15 @@
           <div class="card-body text-secondary text-center">
             <h1>会員情報変更</h1>
               <%= form_with model: @user do |f| %>
+                <p>名前</p>
                 <p><%= f.text_field :name %></p>
+                <p>メールアドレス</p>
                 <p><%= f.text_field :email %></p>
+                <p>ニックネーム</p>
                 <p><%= f.text_field :nickname %></p>
+                <p>プロフィール</p>
                 <p><%= f.text_field :profile %></p>
+                <p>外部リンク</p>
                 <p><%= f.text_field :extemal_link%></p>
                 <%= f.submit '保存' %>
               <% end %>
