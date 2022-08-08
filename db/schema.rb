@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_04_054413) do
+ActiveRecord::Schema.define(version: 2022_08_08_084344) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,12 @@ ActiveRecord::Schema.define(version: 2022_08_04_054413) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "exhibitions", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "title", null: false
@@ -64,9 +70,9 @@ ActiveRecord::Schema.define(version: 2022_08_04_054413) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", null: false
-    t.string "nickname", null: false
-    t.text "profile", null: false
-    t.string "extemal_link", null: false
+    t.string "nickname"
+    t.text "profile"
+    t.string "extemal_link"
     t.boolean "is_deleted", default: false, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

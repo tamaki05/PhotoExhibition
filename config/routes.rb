@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only:[:index, :show, :edit, :update]
+    resources :categories, only:[:index, :create, :destroy]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
@@ -31,15 +32,16 @@ end
   #   get 'exhibitions/show'
   #   get 'exhibitions/new'
   #   get 'exhibitions/edit'
-  # end
 
-  # namespace :public do
   #   get 'users/index'
   #   get 'users/show'
   #   get 'users/edit'
   #   get 'users/unsubscribe'
   # end
 
+  # namespace :admin do
+  #   get 'categories/index'
   # get 'users/index'
   # get 'users/show'
   # get 'users/edit'
+  # end
