@@ -19,6 +19,12 @@
             <%= user.name %></td>
             <% end %>
             <td><%= user.email %></td>
+            <!--ユーザーのステータス表示-->
+            <td><% if user.is_deleted == false %>
+                  <span class="text-success"><strong>有効</strong></span>
+                <% else %>
+                  <span class="text-secondary"><strong>退会</strong></span>
+                <% end %></td>
           </tr>
           <% end %>
         </table>
