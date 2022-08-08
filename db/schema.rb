@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2022_08_08_084344) do
 
   create_table "exhibitions", force: :cascade do |t|
     t.integer "user_id", null: false
+    t.integer "category_id", null: false
     t.string "title", null: false
     t.text "introduction", null: false
     t.datetime "created_at", precision: 6, null: false

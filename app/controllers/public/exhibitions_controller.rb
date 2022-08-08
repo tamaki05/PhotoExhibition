@@ -10,6 +10,7 @@ class Public::ExhibitionsController < ApplicationController
 
   def new
     @exhibition = Exhibition.new
+    @categories = Category.all
   end
 
   def create

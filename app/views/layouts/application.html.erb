@@ -22,6 +22,9 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
+                  <%= link_to 'exhibition', categories_path %>
+                </li>
+                <li>
                   <%= link_to 'exhibitor', users_path %>
                 </li>
                 <li>

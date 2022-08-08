@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     get 'users/unsubscribe' => 'users#unsubscribe'
     patch 'users/withdraw' => 'users#withdraw'
     resources :users, only:[:index, :show, :edit, :update]
+    resources :categories, only:[:index, :show]
   end
 
   namespace :admin do
@@ -37,6 +38,9 @@ end
   #   get 'users/show'
   #   get 'users/edit'
   #   get 'users/unsubscribe'
+
+    # get 'categories/index'
+    # get 'categories/show'
   # end
 
   # namespace :admin do
