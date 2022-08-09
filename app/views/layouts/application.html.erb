@@ -34,6 +34,7 @@
                   <%= link_to '投稿フォーム', new_exhibition_path %>
                 </li>
                 <li>
+                <li>
                   <%= link_to "log out", destroy_user_session_path, method: :delete %>
                 </li>
               <% elsif admin_signed_in? %>

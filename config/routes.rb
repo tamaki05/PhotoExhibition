@@ -14,15 +14,25 @@ Rails.application.routes.draw do
   scope module: :public do
     root :to => 'homes#top'
     get "about" => 'homes#about'
-    resources :exhibitions, only:[:index, :new, :create, :show, :edit, :update, :destroy]
+
+    resources :exhibitions, only:[:index, :new, :create, :show, :edit, :update, :destroy] do
+      resource :favorites, only:[:create, :destroy]
+    end
+
     get 'users/unsubscribe' => 'users#unsubscribe'
     patch 'users/withdraw' => 'users#withdraw'
-    resources :users, only:[:index, :show, :edit, :update]
+    resources :users, only:[:index, :show, :edit, :update] do
+      member do
+        get :favorites
+      end
+    end
+
     resources :categories, only:[:index, :show]
   end
 
   namespace :admin do
     resources :users, only:[:index, :show, :edit, :update]
+
     resources :categories, only:[:index, :create, :destroy]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -41,6 +51,9 @@ end
 
     # get 'categories/index'
     # get 'categories/show'
+
+    # get 'favorites/index'
+
   # end
 
   # namespace :admin do

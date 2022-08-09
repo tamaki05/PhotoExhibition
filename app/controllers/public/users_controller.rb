@@ -1,4 +1,5 @@
 class Public::UsersController < ApplicationController
+
   def index
     @user = User.all
   end
@@ -27,6 +28,14 @@ class Public::UsersController < ApplicationController
     reset_session
     redirect_to root_path
   end
+
+  def favorites
+    @user = User.find(params[:id])
+    favorites = Favorite.where(user_id: @user.id).pluck(:exhibition_id)
+    @favorite_exhibitions = Exhibition.find(favorites)
+  end
+
+  private
 
   def user_params
     params.require(:user).permit(:name, :email, :nickname, :profile, :extemal_link)

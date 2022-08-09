@@ -39,6 +39,6 @@ class Public::ExhibitionsController < ApplicationController
   private
 
   def exhibition_params
-    params.require(:exhibition).permit(:image, :title, :introduction)
+    params.require(:exhibition).permit(:image, :title, :introduction, :category_id)
   end
 end

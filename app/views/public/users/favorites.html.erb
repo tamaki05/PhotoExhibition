@@ -1,0 +1,17 @@
+<div class=" d-flex align-items-center justify-content-center pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-11 col-md-8 col-lg-6 mx-auto">
+        <h4>いいね一覧</h4>
+        <% @favorite_exhibitions.each do |exhibition|%>
+          <%= link_to exhibition_path(exhibition.id) do %>
+            <%= image_tag exhibition.image, size: "200x200" %>
+          <% end %>
+          <%= link_to user_path(@user.id) do %>
+            <%= exhibition.user.name %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
