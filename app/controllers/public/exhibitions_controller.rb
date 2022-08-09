@@ -36,6 +36,13 @@ class Public::ExhibitionsController < ApplicationController
     redirect_to exhibitions_path
   end
 
+  def comments
+    @comment = Comment.new
+    @exhibition = Exhibition.find(params[:id])
+    comments = Comment.where(exhibition_id: @exhibition.id).pluck(:user_id)
+    @comment_users = User.find(comments)
+  end
+
   private
 
   def exhibition_params

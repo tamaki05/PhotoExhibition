@@ -20,6 +20,8 @@
                   <% end %>
                 </p>
               <% end %>
+              <!--コメント機能-->
+              <p><%= link_to "コメントする", comments_exhibition_path(@exhibition) %></p>
           <p><%= link_to "編集", edit_exhibition_path(@exhibition.id) %></p>
           <p><%= link_to "削除", exhibition_path(@exhibition.id), method: :delete, "date-confirm" => "本当に削除しますか？" %></p>
         </div>

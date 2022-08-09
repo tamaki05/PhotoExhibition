@@ -1,0 +1,26 @@
+<div class=" d-flex align-items-center justify-content-center pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-11 col-md-8 col-lg-6 mx-auto">
+        <div class="text-center">
+          <h4>Comment</h4>
+            <p><%= image_tag @exhibition.image, size: "200x200" %></p>
+            <div>
+              <% @exhibition.comments.each do |comment| %>
+                <p><%= comment.message %>
+                    <% if comment.user == current_user %>
+                      <%= link_to "削除", exhibition_comment_path(comment.exhibition, comment), method: :delete %>
+                    <% end %></p>
+              <% end %>
+            </div>
+            <div>
+              <%= form_with model: @comment, url: exhibition_comments_path(@exhibition.id), method: :post do |f| %>
+                <%= f.text_area :message, rows: '5', placeholder: "コメントを記入" %><br>
+                <%= f.submit "送信" %>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

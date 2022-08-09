@@ -15,8 +15,12 @@ Rails.application.routes.draw do
     root :to => 'homes#top'
     get "about" => 'homes#about'
 
-    resources :exhibitions, only:[:index, :new, :create, :show, :edit, :update, :destroy] do
-      resource :favorites, only:[:create, :destroy]
+    resources :exhibitions, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
+      resource :favorites, only: [:create, :destroy]
+      resources :comments, only: [:create, :destroy]
+      member do
+        get :comments
+      end
     end
 
     get 'users/unsubscribe' => 'users#unsubscribe'
