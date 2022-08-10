@@ -17,6 +17,12 @@ class Admin::UsersController < ApplicationController
     redirect_to admin_user_path(@user.id)
   end
 
+  def comments
+    @user = User.find(params[:id])
+    comments = Comment.where(user_id: @user.id).pluck(:exhibition_id)
+    @user_comments = Comment.find(comments)
+  end
+
   private
 
   def user_params

@@ -35,7 +35,12 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users, only:[:index, :show, :edit, :update]
+    resources :users, only:[:index, :show, :edit, :update] do
+      resources :comments ,only:[:destroy]
+      member do
+        get :comments
+      end
+    end
 
     resources :categories, only:[:index, :create, :destroy]
   end
