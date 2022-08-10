@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root :to => 'homes#top'
     get "about" => 'homes#about'
+    post 'users/guest_sign_in', to: 'users/sessions#guest_sign_in'
 
     resources :exhibitions, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
       resource :favorites, only: [:create, :destroy]
