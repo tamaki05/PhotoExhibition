@@ -8,12 +8,12 @@
           <%= @user.profile %>
           <%= @user.extemal_link %>
           <%= link_to 'いいね一覧', favorites_user_path(@user) %>
-          
+
           <!--ゲストはプロフィール編集できないようにする-->
           <% if @user.name != "guestuser" %>
               <%= link_to '会員情報編集', edit_user_path, class: "btn btn-sm btn-success" %>
           <% end %>
-          
+
       </div>
     </div>
   </div>

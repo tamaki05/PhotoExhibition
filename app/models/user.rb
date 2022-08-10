@@ -14,6 +14,6 @@ class User < ApplicationRecord
       user.name = "guestuser"
     end
   end
-  
+
 end
 #
