@@ -22,10 +22,10 @@
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <%= search_form_for @q, url: search_exhibitions_path do |f| %>
-                    <%= f.search_field :title_cont %>
-                    <%= f.submit '検索' %>
-                  <% end %>
+                  <%#= search_form_for @q, url: search_exhibitions_path do |f| %>
+                    <%#= f.search_field :title_cont %>
+                    <%#= f.submit '検索' %>
+                  <%# end %>
                 </li>
                 <li>
                   <%= link_to 'exhibition', categories_path %>

@@ -7,14 +7,14 @@
             <h4><strong><%= @category.name %></strong></h4>
           </div>
         </div>
-        <%#= @exhibitions.each do |exhibition| %>
-          <% if @category.id == @exhibitions.category_id %>
-            <%#= link_to exhibition_path(@exhibition.id) do %>
-              <%#= image_tag @exhibition.image, size: "200x200" %>
-              <%= @category.exhibitions.title %>
-            <%# end %>
+        <% @exhibitions.each do |exhibition| %>
+          <% if @category.id == exhibition.category_id %>
+            <%= link_to exhibition_path(exhibition.id) do %>
+              <%= image_tag exhibition.image, size: "100x100" %>
+              <%= exhibition.title %>
+            <% end %>
           <% end %>
-        <%# end %>
+        <% end %>
       </div>
     </div>
   </div>
