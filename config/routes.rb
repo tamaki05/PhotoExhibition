@@ -25,6 +25,9 @@ Rails.application.routes.draw do
       member do
         get :comments
       end
+      collection do
+        get 'search'
+      end
     end
 
     get 'users/unsubscribe' => 'users#unsubscribe'
