@@ -5,7 +5,9 @@
         <h4>展示者一覧</h4>
 
         <% @user.each do |user| %>
-          <%= user.name %>
+          <%= link_to user_path(user.id) do %>
+            <%= user.name %>
+          <% end %>
         <% end %>
       </div>
     </div>

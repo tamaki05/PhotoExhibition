@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
         <h4>コメント一覧</h4>
-          <% @user_comments.each do |comment| %>
+          <% @user.comments.each do |comment| %>
             <%= comment.message %>
             <%= link_to "削除", admin_comment_path(comment.id), method: :delete %>
           <% end %>

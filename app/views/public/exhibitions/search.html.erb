@@ -5,7 +5,7 @@
         <div class="text-center">
           <h1>Photo Gallery</h1>
 
-          <% @results.each do |exhibition| %>
+          <% @search_exhibitions.each do |exhibition| %>
             <%= link_to exhibition_path(exhibition.id) do %>
               <%= image_tag exhibition.image, size: "200x200" %>
             <% end %>

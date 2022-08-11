@@ -21,12 +21,12 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-                <li>
-                  <%#= search_form_for @q, url: search_exhibitions_path do |f| %>
-                    <%#= f.search_field :title_cont %>
-                    <%#= f.submit '検索' %>
-                  <%# end %>
-                </li>
+                <!--<li>-->
+                <!--  <%#= search_form_for @search, url: search_exhibitions_path do |f| %>-->
+                <!--    <%#= f.search_field :title_cont,placeholder: '検索するテキストを入力...' %>-->
+                <!--    <%#= f.submit '検索' %>-->
+                <!--  <%# end %>-->
+                <!--</li>-->
                 <li>
                   <%= link_to 'exhibition', categories_path %>
                 </li>

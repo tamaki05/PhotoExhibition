@@ -60,3 +60,4 @@ gem 'devise'
 gem 'net-smtp'
 gem "enum_help"
 gem 'ransack'
+gem 'jquery-rails'

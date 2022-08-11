@@ -20,7 +20,6 @@ class Admin::UsersController < ApplicationController
   def comments
     @user = User.find(params[:id])
     comments = Comment.where(user_id: @user.id).pluck(:exhibition_id)
-    @user_comments = Comment.find(comments)
   end
 
   private
