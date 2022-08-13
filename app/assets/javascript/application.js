@@ -12,14 +12,12 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-//= import "jquery";
-//= import "jquery_ujs";
+import "jquery";
 import "popper.js";
 import "bootstrap";
 import "../stylesheets/application"
-import "./about.js"
-import "./top.js"
 
+alert("test")
 
 Rails.start()
 Turbolinks.start()
