@@ -18,7 +18,7 @@
     <ul class="slider">
       <% @exhibition.first(9).each do |exhibition| %>
         <%= link_to exhibition_path(exhibition.id) do %>
-          <%= image_tag exhibition.get_imane(600,600) %>
+          <%= image_tag exhibition.get_image(600,600) %>
          <% end %>
       <% end %>
     </ul>

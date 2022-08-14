@@ -11,7 +11,7 @@ class Exhibition < ApplicationRecord
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
-  def get_imane( width, height)
+  def get_image( width, height)
     image.variant(resize_to_limit: [width, height]).processed
   end
 end
