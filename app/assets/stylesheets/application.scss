@@ -55,3 +55,19 @@
 	transform: translate(-50%, -50%) scale(1);
     border-color:#fff;
 }
+
+/*slick*/
+
+.slider .slick-slide {
+    margin:0 10px;
+}
+
+
+.slick-prev,
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    height: 15px;
+    width: 15px;
+}

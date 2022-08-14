@@ -3,6 +3,7 @@ class Public::HomesController < ApplicationController
   end
 
   def about
-    @exhibition = Exhibition.limit(3)
+    @exhibition = Exhibition.all
+    @exhibition = Exhibition.all.order(created_at: :desc)
   end
 end

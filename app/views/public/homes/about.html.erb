@@ -3,28 +3,34 @@
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
         <div class="text-center">
-          <h1>Photo Exhibition</h1>
-            <p>サイトの紹介文</p>
-
-            <ul class="slider">
-            <% @exhibition.first(3).each do |exhibition| %>
-              <%= link_to exhibition_path(exhibition.id) do %>
-                <%= image_tag exhibition.image, size: "200x200" %>
-              <% end %>
-            <% end %>
-            </ul>
+          <h1>Photo Exhibition</h1><br>
+            <h4>たくさんの写真との出会いを。</h4><br>
+            <p>誰もが気軽に自分の作品を展示でき<br>
+            多くの人の目に留まるような場所を作りたいと思い<br>
+            このサイトを作りました。<br>
+            一つの作品を思う存分見ることができ<br>
+            また、新たな作品に出会えるように<br>
+            ぜひ、数多くの作品を心行くまでご覧ください。
+            </p><br>
         </div>
       </div>
     </div>
+    <ul class="slider">
+      <% @exhibition.first(9).each do |exhibition| %>
+        <%= link_to exhibition_path(exhibition.id) do %>
+          <%= image_tag exhibition.get_imane(600,600) %>
+         <% end %>
+      <% end %>
+    </ul>
   </div>
 </div>
 
 
-<ul class="slider">
-  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_01.jpg" alt=""></li>
-  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_02.jpg" alt=""></li>
-  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_03.jpg" alt=""></li>
-  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_04.jpg" alt=""></li>
-  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_05.jpg" alt=""></li>
-  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_06.jpg" alt=""></li>
-<!--/slider--></ul>
+<!--<ul class="slider">-->
+<!--  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_01.jpg" alt=""></li>-->
+<!--  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_02.jpg" alt=""></li>-->
+<!--  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_03.jpg" alt=""></li>-->
+<!--  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_04.jpg" alt=""></li>-->
+<!--  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_05.jpg" alt=""></li>-->
+<!--  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_06.jpg" alt=""></li>-->
+<!--/slider-->
