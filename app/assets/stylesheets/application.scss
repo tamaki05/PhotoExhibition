@@ -13,8 +13,9 @@
  *= require_tree .
  *= require_self
  */
-/*== 押し込む円 */
 
+
+/*== 押し込む円 */
 .pushcircle{
     /*周囲の線の起点とするためrelativeを指定*/
 	position: relative;
@@ -33,7 +34,6 @@
     align-items: center;
     justify-content: center;
 }
-
 /*内側の線*/
 .pushcircle:after {
 	content: "";
@@ -49,7 +49,6 @@
     /*アニメーションの指定*/
     transition: .3s ease;
 	}
-
 /*hoverをしたら枠線が小さくなる*/
 .pushcircle:hover:after {
 	transform: translate(-50%, -50%) scale(1);
@@ -57,11 +56,9 @@
 }
 
 /*slick*/
-
 .slider .slick-slide {
     margin:0 10px;
 }
-
 
 .slick-prev,
 .slick-next {
