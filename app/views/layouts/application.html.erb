@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <!--link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/css/6-1-6.css"-->
+
+
   </head>
 
     <header class="shadow-sm">
@@ -27,6 +32,9 @@
                 <!--    <%#= f.submit '検索' %>-->
                 <!--  <%# end %>-->
                 <!--</li>-->
+                <li>
+                  <%= link_to "about", about_path %>
+                </li>
                 <li>
                   <%= link_to 'exhibition', categories_path %>
                 </li>
@@ -55,6 +63,9 @@
                 </li>
               <% else %>
                 <li>
+                  <%= link_to "about", about_path %>
+                </li>
+                <li>
                   <%= link_to "guest", users_guest_sign_in_path, method: :post %>
                 </li>
                 <li>
@@ -69,8 +80,12 @@
         </div>
       </nav>
     </header>
-    <main class="mb-auto">
+    <main class="mb-auto">]
       <%= yield %>
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+      <script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/js/6-1-6.js"></script>
+      <%#= javascript_pack_tag 'about' %>
     </main>
 </html>
 

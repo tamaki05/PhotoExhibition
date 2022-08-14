@@ -3,24 +3,29 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
-//= import "jquery";
+import "jquery";
 //= import "jquery_ujs";
 import "popper.js";
 import "bootstrap";
 import "../stylesheets/application"
-import "./about.js"
+//import "./about.js"
+import "./slick.min.js"
 import "./top.js"
 
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+//= require_tree .
+
+// console.log("application")
+// $('.text-center').slick({
+//   dots: true
+// });

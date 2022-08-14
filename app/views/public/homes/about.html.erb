@@ -5,8 +5,26 @@
         <div class="text-center">
           <h1>Photo Exhibition</h1>
             <p>サイトの紹介文</p>
+
+            <ul class="slider">
+            <% @exhibition.first(3).each do |exhibition| %>
+              <%= link_to exhibition_path(exhibition.id) do %>
+                <%= image_tag exhibition.image, size: "200x200" %>
+              <% end %>
+            <% end %>
+            </ul>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
+<ul class="slider">
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_01.jpg" alt=""></li>
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_02.jpg" alt=""></li>
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_03.jpg" alt=""></li>
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_04.jpg" alt=""></li>
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_05.jpg" alt=""></li>
+  <li><img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/img/img_06.jpg" alt=""></li>
+<!--/slider--></ul>

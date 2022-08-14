@@ -3,5 +3,6 @@ class Public::HomesController < ApplicationController
   end
 
   def about
+    @exhibition = Exhibition.limit(3)
   end
 end
