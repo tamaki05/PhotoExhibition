@@ -2,15 +2,29 @@
   <div class="container">
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
-        <h4>いいね一覧</h4>
-        <% @favorite_exhibitions.each do |exhibition|%>
-          <%= link_to exhibition_path(exhibition.id) do %>
-            <%= image_tag exhibition.image, size: "200x200" %>
-          <% end %>
-          <%= link_to user_path(@user.id) do %>
-            <%= exhibition.user.name %>
-          <% end %>
-        <% end %>
+        <div class="text-center">
+          <h4>いいね一覧</h4><br>
+          <table>
+            <tr>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+             <% @favorite_exhibitions.each do |exhibition|%>
+              <td>
+                <%= link_to exhibition_path(exhibition.id) do %>
+                <%= image_tag exhibition.get_image(200,300) %>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to user_path(exhibition.user.id) do %>
+                <%= exhibition.user.name %>
+                <% end %><br><br>
+              </td>
+            </tr>
+            <% end %>
+          </table>
+        </div>
       </div>
     </div>
   </div>

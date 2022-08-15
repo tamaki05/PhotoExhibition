@@ -17,6 +17,7 @@ import "../stylesheets/application"
 //import "./about.js"
 import "./slick.min.js"
 import "./top.js"
+import '@fortawesome/fontawesome-free/js/all'
 
 
 Rails.start()
