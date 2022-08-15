@@ -1,19 +1,34 @@
 <div class=" d-flex align-items-center justify-content-center pt-5">
   <div class="container">
     <div class="row">
-      <div class="col-11 col-md-8 col-lg-6 mx-auto">
-        <h1>マイページ</h1>
-          <%= link_to '展示一覧', exhibitions_path %>
-          <%= @user.nickname %>
-          <%= @user.profile %>
-          <%= @user.extemal_link %>
-          <%= link_to 'いいね一覧', favorites_user_path(@user) %>
+      <div class="col-lg-8">
+        <ul class="slider2">
+          <!--投稿した画像のスライド-->
+          <% @user_exhibitions.each do |exhibition| %>
+            <%= link_to exhibition_path(exhibition.id) do %>
+              <%= image_tag exhibition.get_image(600,600) %>
+            <% end %>
+           <% end %>
+        </ul>
+        <%= link_to '展示一覧', exhibitions_path %>
+      </div>
 
+        <div class="col-4">
+
+          <p><%= @user.nickname %></p>
+          <p><%= @user.profile %></p>
+          <p><%= @user.extemal_link %></p>
+          <p><%= link_to 'いいね一覧', favorites_user_path(@user) %></p>
+
+          <!--ログインユーザー以外は編集できないようにする-->
+          <% if @user == current_user %>
+            <p><%= link_to '会員情報編集', edit_user_path(@user), class: "btn btn-sm btn-success" %>
+          <% end %>
           <!--ゲストはプロフィール編集できないようにする-->
           <% if @user.name != "guestuser" %>
-              <%= link_to '会員情報編集', edit_user_path, class: "btn btn-sm btn-success" %>
+            <div class='row'>
+              <%= link_to '', edit_user_path(@user) %>
           <% end %>
-
       </div>
     </div>
   </div>

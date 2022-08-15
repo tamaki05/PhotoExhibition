@@ -6,6 +6,7 @@ class Public::UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_exhibitions = @user.exhibitions.all
   end
 
   def edit

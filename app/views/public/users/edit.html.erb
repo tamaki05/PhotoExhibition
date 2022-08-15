@@ -7,15 +7,15 @@
             <h1 class="text-center">会員情報変更</h1>
               <%= form_with model: @user do |f| %>
                 <p>名前</p>
-                <p><%= f.text_field :name, placeholder: "名前", class: "form-control" %></p>
+                <p><%= f.text_field :name, class: "form-control" %></p>
                 <p>メールアドレス</p>
-                <p><%= f.text_field :email, placeholder: "メールアドレス", class: "form-control" %></p>
+                <p><%= f.text_field :email, class: "form-control" %></p>
                 <p>ニックネーム</p>
-                <p><%= f.text_field :nickname, placeholder: "ニックネーム", class: "form-control" %></p>
+                <p><%= f.text_field :nickname, class: "form-control" %></p>
                 <p>プロフィール</p>
-                <p><%= f.text_field :profile, placeholder: "プロフィール", class: "form-control" %></p>
+                <p><%= f.text_field :profile, class: "form-control" %></p>
                 <p>外部リンク</p>
-                <p><%= f.text_field :extemal_link, placeholder: "外部リンク", class: "form-control"%></p>
+                <p><%= f.text_field :extemal_link, class: "form-control"%></p>
                 <div class="text-center"><%= f.submit '保存' %></div>
               <% end %>
                 <div class="text-center"><%= link_to '退会', users_unsubscribe_path, class: "btn btn-sm btn-success" %></div>

@@ -84,3 +84,40 @@
     }
     100% { opacity: 0 }
 }
+
+// マイページの投稿一覧スライド
+.slider2 {
+    position:relative;
+  z-index: 1;
+  /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+}
+.slider2-item {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/*ドットナビゲーションの設定*/
+.slick-dots {
+    text-align:center;
+	margin:10px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+	margin:10 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+
+}
+
+.slick-dots .slick-active button{
+    background:#778899;/*ドットボタンの現在地表示の色*/
+}
