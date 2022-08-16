@@ -11,7 +11,7 @@
       <% @users.each do |user| %>
         <div class="col-lg-3">
           <%= image_tag user.get_profile_image(100, 100) %>
-          <%= link_to user_path(user.id) do %>
+          <%= link_to user_path(user.id), class: "link" do %>
             <%= user.name %><br><br>
           <% end %>
         </div>

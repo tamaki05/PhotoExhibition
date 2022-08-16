@@ -22,7 +22,7 @@
 
           <!--ログインユーザー以外は編集できないようにする-->
           <% if @user == current_user %>
-            <p><%= link_to '会員情報編集', edit_user_path(@user), class: "btn btn-sm btn-success" %>
+            <p><%= link_to 'プロフィールを編集', edit_user_path(@user), class: "btn btn-sm btn-success" %>
           <% end %>
           <!--ゲストはプロフィール編集できないようにする-->
           <% if @user.name != "guestuser" %>
