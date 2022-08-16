@@ -5,7 +5,7 @@ class Public::CategoriesController < ApplicationController
 
   def show
     @category = Category.find(params[:id])
-    @exhibitions = Exhibition.where(id: params[:id])
+    @exhibitions = @category.exhibitions
   end
 
   private
