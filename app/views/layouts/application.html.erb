@@ -38,46 +38,46 @@
                 <!--  <%# end %>-->
                 <!--</li>-->
                 <li>
-                  <%= link_to "about", about_path %>
+                  <%= link_to "about", about_path, class: "header-link" %>
                 </li>
                 <li>
-                  <%= link_to 'exhibition', categories_path %>
+                  <%= link_to 'exhibition', categories_path, class: "header-link" %>
                 </li>
                 <li>
-                  <%= link_to 'exhibitor', users_path %>
+                  <%= link_to 'exhibitor', users_path, class: "header-link" %>
                 </li>
                 <li>
-                  <%= link_to 'my page', user_path(current_user.id) %>
+                  <%= link_to 'my page', user_path(current_user.id), class: "header-link" %>
                 </li>
                 <li>
-                  <%= link_to '投稿フォーム', new_exhibition_path %>
+                  <%= link_to '投稿フォーム', new_exhibition_path, class: "header-link" %>
                 </li>
                 <li>
                 <li>
-                  <%= link_to "log out", destroy_user_session_path, method: :delete %>
+                  <%= link_to "log out", destroy_user_session_path, method: :delete, class: "header-link" %>
                 </li>
               <% elsif admin_signed_in? %>
                 <li>
-                  <%= link_to "user", admin_users_path %>
+                  <%= link_to "user", admin_users_path, class: "header-link" %>
                 </li>
                 <li>
-                  <%= link_to "category", admin_categories_path %>
+                  <%= link_to "category", admin_categories_path, class: "header-link" %>
                 </li>
                 <li>
-                  <%= link_to "log out", destroy_admin_session_path, method: :delete %>
+                  <%= link_to "log out", destroy_admin_session_path, method: :delete, class: "header-link" %>
                 </li>
               <% else %>
                 <li>
-                  <%= link_to "about", about_path %>
+                  <%= link_to "about", about_path, class: "header-link" %>
                 </li>
                 <li>
-                  <%= link_to "guest", users_guest_sign_in_path, method: :post %>
+                  <%= link_to "guest", users_guest_sign_in_path, method: :post, class: "header-link" %>
                 </li>
                 <li>
-                  <%= link_to "sign up", new_user_registration_path %>
+                  <%= link_to "sign up", new_user_registration_path, class: "header-link" %>
                 </li>
                 <li>
-                  <%= link_to "log in", new_user_session_path %>
+                  <%= link_to "log in", new_user_session_path, class: "header-link" %>
                 </li>
               <% end %>
             </ul>

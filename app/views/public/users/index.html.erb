@@ -2,14 +2,20 @@
   <div class="container">
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
-        <h4>展示者一覧</h4><br>
-        <% @users.each do |user| %>
+        <div class="text-center">
+          <h4><strong>展示者一覧</strong></h4><br>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <% @users.each do |user| %>
+        <div class="col-lg-3">
           <%= image_tag user.get_profile_image(100, 100) %>
           <%= link_to user_path(user.id) do %>
-            <%= user.name %>
+            <%= user.name %><br><br>
           <% end %>
+        </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>
