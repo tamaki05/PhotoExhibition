@@ -2,12 +2,24 @@
   <div class="container">
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
-        <h4>コメント一覧</h4>
-          <% @user.comments.each do |comment| %>
-            <%= comment.message %>
-            <%= link_to "削除", admin_comment_path(comment.id), method: :delete %>
-          <% end %>
+        <div class="text-center">
+          <h4><strong>コメント一覧</strong></h4><br>
+        </div>
       </div>
+    </div>
+    <div class="row text-center">
+      <table align="center">
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <% @user.comments.each do |comment| %>
+            <td width="200" height="50"><%= comment.message %></td>
+            <td width="200" height="50"><%= link_to "削除", admin_comment_path(comment.id), method: :delete, class: "btn btn-outline-success" %></td>
+          <% end %>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

@@ -2,9 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
-        <h4>展示者一覧</h4>
-
-        <% @user.each do |user| %>
+        <h4>展示者一覧</h4><br>
+        <% @users.each do |user| %>
+          <%#= image_tag user.get_profile_image(100,100) %>
           <%= link_to user_path(user.id) do %>
             <%= user.name %>
           <% end %>

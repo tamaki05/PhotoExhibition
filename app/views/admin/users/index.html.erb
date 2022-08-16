@@ -2,33 +2,33 @@
   <div class="container">
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
-        <h1>出展者一覧</h1>
+        <div class="text-center">
+          <h1>出展者一覧</h1><br>
+        </div>
       </div>
     </div>
     <div class="row">
-      <div class="col-11 col-md-8 col-lg-6 mx-auto">
-        <table>
-          <tr>
-            <th>name</th>
-            <th>email</th>
-            <th>user status</th>
-          </tr>
-          <% @users.each do |user| %>
-          <tr>
-            <td><%= link_to admin_user_path(user.id) do %>
-            <%= user.name %></td>
-            <% end %>
-            <td><%= user.email %></td>
-            <!--ユーザーのステータス表示-->
-            <td><% if user.is_deleted == false %>
-                  <span class="text-success"><strong>有効</strong></span>
-                <% else %>
-                  <span class="text-secondary"><strong>退会</strong></span>
-                <% end %></td>
-          </tr>
+      <table align="center">
+        <tr>
+          <th>name</th>
+          <th>email</th>
+          <th>user status</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+          <td  width="200"><%= link_to admin_user_path(user.id) do %>
+          <%= user.name %></td>
           <% end %>
-        </table>
-      </div>
+          <td width="200"><%= user.email %></td>
+          <!--ユーザーのステータス表示-->
+          <td width="100"><% if user.is_deleted == false %>
+            <span class="text-success"><strong>有効</strong></span>
+          <% else %>
+            <span class="text-secondary"><strong>退会</strong></span>
+          <% end %></td>
+        </tr>
+        <% end %>
+      </table>
     </div>
   </div>
 </div>

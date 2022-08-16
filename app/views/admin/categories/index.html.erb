@@ -4,15 +4,23 @@
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
         <div class="card shadow">
           <div class="card-body text-center">
-            <h4><stropng>カテゴリー</stropng></h4>
+            <h4><stropng>カテゴリー</stropng></h4><br>
               <%= form_with model: @category, url: admin_categories_path do |f| %>
-                <p>カテゴリー  <%= f.text_field :name %><%= f.submit '新規追加' %></p>
-              <% end %>
-
-              <p>カテゴリー一覧</p>
-              <% @categories.each do |category| %>
-                <p><%= category.name %><%= link_to "削除", admin_category_path(category.id), method: :delete, class: "btn btn-sm btn-success" %></p>
-              <% end %>
+                <p>カテゴリー  <%= f.text_field :name %><%= f.submit '新規追加', class: "btn btn-sm btn-success"%></p>
+              <% end %><br>
+              <p><strong>カテゴリー 一覧</strong></p><br>
+                <table align="center">
+                  <% @categories.each do |category| %>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <td width="100" height="50"><%= category.name %></td>
+                    <td width="100" height="50"><%= link_to "削除", admin_category_path(category.id), method: :delete, class: "btn btn-sm btn-success" %></td>
+                  </tr>
+                  <% end %>
+                </table>
           </div>
         </div>
       </div>
