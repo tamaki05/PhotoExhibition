@@ -36,6 +36,12 @@ class Public::UsersController < ApplicationController
     @favorite_exhibitions = Exhibition.find(favorites)
   end
 
+  def exhibitions
+    @user = User.find(params[:id])
+    @exhibitions = @user.exhibitions.all
+  end
+
+
   private
 
   def user_params

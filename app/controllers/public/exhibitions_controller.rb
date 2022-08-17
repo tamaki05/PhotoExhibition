@@ -1,6 +1,4 @@
 class Public::ExhibitionsController < ApplicationController
-  # # 検索用
-  # before_action :set_q, only: [:index, :search]
 
   def index
     @user = current_user
@@ -45,17 +43,14 @@ class Public::ExhibitionsController < ApplicationController
     comments = Comment.where(exhibition_id: @exhibition.id).pluck(:user_id)
     @comment_users = User.find(comments)
   end
+  
+  # 検索(ransack)
+  def search
+    @results = @q.result
+  end
 
-  # # 検索(ransack)
-  # def search
-  #   @results = @q.result
-  # end
+  private
 
-  # private
-
-  # def set_q
-  #   @q = Exhibition.ransack(params[:q])
-  # end
 
   def exhibition_params
     params.require(:exhibition).permit(:image, :title, :introduction, :category_id)

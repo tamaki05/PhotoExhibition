@@ -1,10 +1,16 @@
 class ApplicationController < ActionController::Base
   # 検索用
-  before_action :set_search
+  before_action :set_q
 
-  def set_search
-    @search = Exhibition.ransack(params[:q])
-    # @search_exhibitions = @search.result.page(params[:page])
+  # 検索(ransack)
+  def search
+    @results = @q.result
+  end
+
+  private
+
+  def set_q
+    @q = Exhibition.ransack(params[:q])
   end
 
 end
