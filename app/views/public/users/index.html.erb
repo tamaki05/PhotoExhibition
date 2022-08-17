@@ -10,7 +10,7 @@
     <div class="row">
       <% @users.each do |user| %>
         <div class="col-lg-3">
-          <%= image_tag user.get_profile_image(100, 100) %>
+          <%= image_tag user.get_profile_image(600, 600), class: "rounded-circle", size: "100x100" %>
           <%= link_to user_path(user.id), class: "link" do %>
             <%= user.name %><br><br>
           <% end %>

@@ -10,15 +10,15 @@
             <% end %>
            <% end %>
         </ul>
-        <%= link_to '展示一覧', exhibitions_path %>
+        <%= link_to '展示一覧', exhibitions_path(@user), class: "link" %>
       </div>
 
         <div class="col-4">
-          <p><%= image_tag @user.get_profile_image(100, 100) %></p>
+          <p><%= image_tag @user.get_profile_image(600, 600), class: "rounded-circle", size: "100x100" %></p>
           <p><%= @user.nickname %></p>
           <p><%= @user.profile %></p>
           <p><%= @user.extemal_link %></p>
-          <p><%= link_to 'いいね一覧', favorites_user_path(@user) %></p>
+          <p><%= link_to 'いいね一覧', favorites_user_path(@user), class: "link" %></p>
 
           <!--ログインユーザー以外は編集できないようにする-->
           <% if @user == current_user %>
