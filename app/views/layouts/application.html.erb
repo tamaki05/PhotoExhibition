@@ -13,11 +13,6 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="https://kit.fontawesome.com/3a91f848bc.js" crossorigin="anonymous"></script>
-    <!--<link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">-->
-    <!--<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">-->
-    <!--link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/css/6-1-6.css"-->
-
-
   </head>
 
     <header class="shadow-sm">
@@ -31,12 +26,12 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
-                <!--<li>-->
-                <!--  <%#= search_form_for @search, url: search_exhibitions_path do |f| %>-->
-                <!--    <%#= f.search_field :title_cont,placeholder: '検索するテキストを入力...' %>-->
-                <!--    <%#= f.submit '検索' %>-->
-                <!--  <%# end %>-->
-                <!--</li>-->
+                <li>
+                  <%= search_form_for @search, url: search_exhibitions_path do |f| %>
+                    <%= f.search_field :title_cont,placeholder: '検索するテキストを入力...' %>
+                    <%= f.submit '検索' %>
+                  <% end %>
+                </li>
                 <li>
                   <%= link_to "about", about_path, class: "header-link" %>
                 </li>
@@ -87,10 +82,6 @@
     </header>
     <main class="mb-auto">
       <%= yield %>
-      <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
-      <!--<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>-->
-      <!--<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-1-6/js/6-1-6.js"></script>-->
-      <%#= javascript_pack_tag 'about' %>
     </main>
 </html>
 

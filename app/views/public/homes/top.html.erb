@@ -4,11 +4,13 @@
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
         <div class="text-center">
           <h1>Well Come!!</h1>
-          <% @exhibition.first(6).each do |exhibition|%>
+          <div class="zoomIn"><a href="#"><span class="mask">
+          <% @exhibition.first(9).each do |exhibition|%>
             <%= link_to exhibition_path(exhibition.id) do %>
               <%= image_tag exhibition.get_image(400,300) %>
             <% end %>
           <% end %>
+          </span></a></div>
         </div>
       </div>
     </div>
