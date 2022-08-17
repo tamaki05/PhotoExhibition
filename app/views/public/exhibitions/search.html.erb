@@ -7,7 +7,7 @@
 
           <% @results.each do |exhibition| %>
             <%= link_to exhibition_path(exhibition.id) do %>
-              <%= image_tag exhibition.image, size: "200x200" %>
+              <%= image_tag exhibition.get_image(600,600), size: "200x200" %>
             <% end %>
           <% end %>
         </div>
