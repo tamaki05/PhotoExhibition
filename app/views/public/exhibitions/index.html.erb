@@ -3,16 +3,18 @@
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
         <div class="text-center">
-          <h1>Photo Gallery</h1>
-
-          <% @exhibition.each do |exhibition| %>
-            <%= link_to exhibition_path(exhibition.id) do %>
-              <%= image_tag exhibition.image, size: "200x200" %>
-            <% end %>
-          <% end %>
-
+          <h1>Photo Gallery</h1><br>
         </div>
       </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <% @exhibition.each do |exhibition| %>
+        <div class="mt-1 pb-10">
+          <%= link_to exhibition_path(exhibition.id) do %>
+            <%= image_tag exhibition.image, size: "200x200" %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
