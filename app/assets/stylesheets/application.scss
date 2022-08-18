@@ -48,3 +48,15 @@
     color: #FFFFFF; //ボタンのテキストの色
 
 }
+
+// link用ボタン色(グレーにするところ)
+.btn-link-gray {
+    height: 40px;
+    width: 200px;
+    border-radius: 20px;
+    display: block;
+    text-decoration: none;
+    background: #EEEEEE;
+    color: #000000;
+
+}
