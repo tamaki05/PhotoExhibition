@@ -15,12 +15,12 @@
                 <p>ニックネーム</p>
                 <p><%= f.text_field :nickname, class: "form-control" %></p>
                 <p>プロフィール</p>
-                <p><%= f.text_field :profile, class: "form-control" %></p>
+                <p><%= f.text_area :profile, class: "form-control" %></p>
                 <p>外部リンク</p>
                 <p><%= f.text_field :extemal_link, class: "form-control"%></p>
-                <div class="text-center"><%= f.submit '変更を保存', class: "btn btn-sm btn-success" %></div>
+                <div class="text-center"><%= f.submit '変更を保存', class: "btn-form-blue" %></div>
               <% end %>
-                <div class="text-center"><%= link_to 'キャンセル', user_path(@user.id), class: "btn btn-sm btn btn-light" %></div>
+                <div class="text-center"><%= link_to 'キャンセル', user_path(@user.id), class: "btn btn-sm btn btn-light" %></div><br>
                 <div class="text-center"><%= link_to '退会', users_unsubscribe_path, class: "btn btn-sm btn btn-danger" %></div>
           </div>
         </div>

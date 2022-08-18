@@ -9,7 +9,7 @@
                 <%= f.text_field :title, placeholder: "タイトル", class: "form-control" %>
                 <%= f.text_area :introduction, placeholder: "キャプション", class: "form-control" %><br>
                 <%= f.collection_select :category_id, @categories, :id, :name, {prompt: "カテゴリー選択"}, {class: "form-control input-sm"} %><br>
-                <%= f.submit '展示する', class: "btn btn-sm btn-success"%>
+                <input class="btn-form-gray" type="submit" value="展示する"></p>
               <% end %>
           </div>
         </div>

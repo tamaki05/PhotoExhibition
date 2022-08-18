@@ -12,7 +12,7 @@
       <td width="50"><%= comment.user.name %></td>
       <td><%= comment.message %></td>
       <td width="100"><% if comment.user == current_user %>
-          <%= link_to "削除", exhibition_comment_path(comment.exhibition, comment), method: :delete, remote: true,　class: "link" %>
+          <%= link_to "削除", exhibition_comment_path(comment.exhibition, comment), method: :delete, remote: true, class: "btn btn-outline-secondary" %>
           <% end %>
       </td>
     </tr>
