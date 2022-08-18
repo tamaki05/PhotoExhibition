@@ -64,3 +64,24 @@
     overflow: hidden;/*拡大してはみ出る要素を隠す*/
 }
 
+
+// top画面の写真表示
+.gallery{
+    width: auto;
+    height: 100%;
+    columns: 4;/*段組みの数*/
+    padding:0 15px;/*ギャラリー左右に余白をつける*/
+}
+
+.gallery li {
+    margin-bottom: 20px;/*各画像下に余白をつける*/
+}
+
+/*ギャラリー内のイメージは横幅100%にする*/
+.gallery img{
+     width: 100%;
+     height: auto;
+     vertical-align: bottom;/*画像の下にできる余白を削除*/
+
+}
+

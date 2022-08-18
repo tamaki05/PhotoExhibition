@@ -5,13 +5,13 @@
         <div class="col-lg-6">
           <p><%= image_tag @exhibition.get_image(600,600) %></p><br>
         </div>
-        <div class="col-lg-5 pt-6">
+        <div class="col-lg-5 pt-6" id="comments-list-area">
           <!--コメント一覧部分テンプレート-->
           <%= render "public/comments/comments_list", exhibition: @exhibition %>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12" id="comments-area">
           <!--コメント入力フォーム部分テンプレート-->
           <%= render "public/comments/comments", exhibition: @exhibition, comment: @comment %>
         </div>

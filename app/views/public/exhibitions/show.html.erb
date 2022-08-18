@@ -15,13 +15,13 @@
         </div>
       </div>
       <div class="col-lg-1">
-        <div class="text-center">
+        <div class="text-center" id="favorite_buttons_<%= @exhibition.id %>">
           <!--いいねの部分テンプレート-->
           <%= render "public/favorites/favorites", exhibition: @exhibition %>
         </div>
       </div>
       <div class="col-lg-1">
-        <div class="text-center">
+        <div class="text-center" >
           <!--コメント機能-->
           <%= link_to comments_exhibition_path(@exhibition) do %>
             <i class="fa-solid fa-comment-dots fa-3x" style="color: silver;"></i>

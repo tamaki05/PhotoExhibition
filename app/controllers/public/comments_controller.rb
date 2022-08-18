@@ -1,18 +1,17 @@
 class Public::CommentsController < ApplicationController
 
   def create
-    @comment = Comment.new
-    exhibition = Exhibition.find(params[:exhibition_id])
+
+    @exhibition = Exhibition.find(params[:exhibition_id])
     comment = current_user.comments.new(comment_params)
-    comment.exhibition_id = exhibition.id
+    comment.exhibition_id = @exhibition.id
     comment.save
-    redirect_to comments_exhibition_path(exhibition.id)
+    @comment = Comment.new
   end
 
   def destroy
     Comment.find(params[:id]).destroy
-    exhibition = Exhibition.find(params[:exhibition_id])
-    redirect_to comments_exhibition_path(exhibition.id)
+    @exhibition = Exhibition.find(params[:exhibition_id])
   end
 
   private
