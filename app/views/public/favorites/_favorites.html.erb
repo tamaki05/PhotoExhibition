@@ -1,13 +1,13 @@
 <!--いいね機能実装-->
   <% if exhibition.favorited_by?(current_user) %>
     <p>
-      <%= link_to exhibition_favorites_path(exhibition), method: :delete, class: "link" do %>
+      <%= link_to exhibition_favorites_path(exhibition), method: :delete, remote: true, class: "link" do %>
         <i class="fa-solid fa-heart-circle-minus fa-3x" style="color: pink;"></i><%= exhibition.favorites.count %>
       <% end %>
     </p>
       <% else %>
     <p>
-      <%= link_to exhibition_favorites_path(exhibition), method: :post, class: "link" do %>
+      <%= link_to exhibition_favorites_path(exhibition), method: :post, remote: true, class: "link" do %>
         <i class="fa-solid fa-heart-circle-plus fa-3x" style="color: silver;"></i><%= exhibition.favorites.count %>
       <% end %>
       </p>

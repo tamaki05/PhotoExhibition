@@ -6,33 +6,14 @@
           <p><%= image_tag @exhibition.get_image(600,600) %></p><br>
         </div>
         <div class="col-lg-5 pt-5">
-          <table align="center">
-            <% @exhibition.comments.each do |comment| %>
-            <tr>
-              <th></th>
-              <th></th>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr>
-              <td width="50"><%=image_tag comment.user.get_profile_image(600, 600), class: "rounded-circle", size: "50x50" %></td>
-              <td width="50"><%= comment.user.name %></td>
-              <td><%= comment.message %></td>
-              <td width="100"><% if comment.user == current_user %>
-                  <%= link_to "削除", exhibition_comment_path(comment.exhibition, comment), method: :delete, class: "link" %>
-                  <% end %>
-              </td>
-            </tr>
-            <% end %>
-          </table>
+          <!--コメント一覧部分テンプレート-->
+          <%= render "public/comments/comments_list", exhibition: @exhibition %>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
-          <%= form_with model: @comment, url: exhibition_comments_path(@exhibition.id), method: :post do |f| %>
-            <%= f.text_area :message, rows: '5', placeholder: "コメントを記入", class: "form-control" %><br>
-            <%= f.submit "送信", class: "btn btn-sm btn-success" %>
-          <% end %>
+          <!--コメント入力フォーム部分テンプレート-->
+          <%= render "public/comments/comments", exhibition: @exhibition, comment: @comment %>
         </div>
       </div>
     </div>

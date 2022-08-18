@@ -1,0 +1,20 @@
+<!--コメント一覧-->
+<table align="center">
+  <% exhibition.comments.each do |comment| %>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td width="50"><%=image_tag comment.user.get_profile_image(600, 600), class: "rounded-circle", size: "50x50" %></td>
+      <td width="50"><%= comment.user.name %></td>
+      <td><%= comment.message %></td>
+      <td width="100"><% if comment.user == current_user %>
+          <%= link_to "削除", exhibition_comment_path(comment.exhibition, comment), method: :delete, remote: true,　class: "link" %>
+          <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
