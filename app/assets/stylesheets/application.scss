@@ -20,6 +20,12 @@
     color: #666666 ;
 }
 
+.link-black{
+    text-decoration: none;
+    color: #000000 ;
+
+}
+
 .header-link {
     text-decoration: none;
     color: #fff ;
@@ -60,3 +66,17 @@
     color: #000000;
 
 }
+
+// // フォント変更
+
+// @font-face {
+//     font-family: 'LibreBaskerville-Bold';
+//     src: font-url('/assets/LibreBaskerville-Bold.ttf');
+// }
+
+// .h4 {
+//     font-family: 'LibreBaskerville-Bold';
+//     font-size: 100px;
+//     line-height: 100px;
+//     color: black;
+// }
