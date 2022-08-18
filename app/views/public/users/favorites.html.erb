@@ -11,7 +11,7 @@
       <% @favorite_exhibitions.each do |exhibition|%>
         <div class="col-lg-3">
           <%= link_to exhibition_path(exhibition.id) do %>
-            <%= image_tag exhibition.get_image(200,300) %>
+            <%= image_tag exhibition.get_image(600,600), size: "200x200" %>
           <% end %>
           <%= link_to user_path(exhibition.user.id) do %>
             <%= exhibition.user.name %>
