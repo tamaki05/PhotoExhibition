@@ -34,7 +34,9 @@
             <% end %>
 
             <p>アカウントをお持ちの方は<br>
-               <%= link_to "こちら", new_user_session_path %>からログイン</p>
+              <%= link_to "こちら", new_user_session_path %>からログイン</p>
+            <p>または
+              <%= link_to "ゲスト", users_guest_sign_in_path, method: :post %>としてログイン</p>
 
             <%#= render "public/shared/links" %>
 
