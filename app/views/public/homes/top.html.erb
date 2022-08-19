@@ -1,20 +1,11 @@
-<div class=" d-flex align-items-center justify-content-center pt-5">
   <div class="container">
-    <div class="row">
-      <div class="col-11 col-md-8 col-lg-6 mx-auto">
-        <div class="text-center">
-          <h1>Well Come!!</h1><br>
-        </div>
-      </div>
-    </div>
-      <div class="zoomIn"><a href="#"><span class="mask">
-        <ul class="gallery">
-          <% @exhibition.each do |exhibition|%>
-            <%= link_to exhibition_path(exhibition.id) do %>
-              <li><%= image_tag exhibition.get_image(600,600) %></li>
-            <% end %>
+    <div class="zoomIn"><a href="#"><span class="mask">
+      <ul class="gallery">
+        <% @exhibition.each do |exhibition|%>
+          <%= link_to exhibition_path(exhibition.id) do %>
+            <li><%= image_tag exhibition.get_image(600,600) %></li>
           <% end %>
-        </ul>
-      </span></a></div>
+        <% end %>
+      </ul>
+    </span></a></div>
   </div>
-</div>

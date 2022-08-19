@@ -69,12 +69,13 @@
 .gallery{
     width: auto;
     height: 100%;
-    columns: 4;/*段組みの数*/
+    columns: 5;/*段組みの数*/
     padding:0 15px;/*ギャラリー左右に余白をつける*/
 }
 
 .gallery li {
     margin-bottom: 20px;/*各画像下に余白をつける*/
+    display: inline-block;
 }
 
 /*ギャラリー内のイメージは横幅100%にする*/
