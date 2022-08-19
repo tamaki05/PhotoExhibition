@@ -15,71 +15,79 @@
     <script src="https://kit.fontawesome.com/3a91f848bc.js" crossorigin="anonymous"></script>
   </head>
 
-    <header class="shadow-sm">
-      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
-        <div class="container">
-          <a class="navbar-brand p-3" href="/">rogo</a>
-          <button class="navbar-toggler" type="button" data-toggler="collapse"data-target="#navbarNavDropdown"
-                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-              <% if user_signed_in? %>
-                <li>
-                  <%= search_form_for @q, url: search_exhibitions_path do |f| %>
-                    <%= f.search_field :title_cont,placeholder: '検索するテキストを入力...' %>
-                    <%= f.submit '検索' %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to "about", about_path, class: "header-link" %>
-                </li>
-                <li>
-                  <%= link_to 'exhibition', categories_path, class: "header-link" %>
-                </li>
-                <li>
-                  <%= link_to 'exhibitor', users_path, class: "header-link" %>
-                </li>
-                <li>
-                  <%= link_to 'my page', user_path(current_user.id), class: "header-link" %>
-                </li>
-                <li>
-                  <%= link_to '作品を投稿', new_exhibition_path, class: "header-link" %>
-                </li>
-                <li>
-                <li>
-                  <%= link_to "log out", destroy_user_session_path, method: :delete, class: "header-link" %>
-                </li>
-              <% elsif admin_signed_in? %>
-                <li>
-                  <%= link_to "user", admin_users_path, class: "header-link" %>
-                </li>
-                <li>
-                  <%= link_to "category", admin_categories_path, class: "header-link" %>
-                </li>
-                <li>
-                  <%= link_to "log out", destroy_admin_session_path, method: :delete, class: "header-link" %>
-                </li>
-              <% else %>
-                <li>
-                  <%= search_form_for @q, url: search_exhibitions_path do |f| %>
-                    <%= f.search_field :title_cont,placeholder: '検索するテキストを入力...' %>
-                    <%= f.submit '検索' %>
-                  <% end %>
-                </li>
-                <li>
-                  <%= link_to "about", about_path, class: "header-link" %>
-                </li>
-                <li>
-                  <%= link_to "sign up", new_user_registration_path, class: "header-link" %>
-                </li>
-                <li>
-                  <%= link_to "log in", new_user_session_path, class: "header-link" %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+    <header class="sticky-top"> <!--sticky-topでheader固定-->
+      <nav class="navbar">
+        <a class="navbar-brand" href="/">PhotoExhibition</a>
+        <!--<button class="navbar-toggler" type="button" data-toggler="collapse"data-target="#navbarNavDropdown"-->
+        <!--              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">-->
+        <!--  <span class="navbar-toggler-icon"></span>-->
+        <!--</button>-->
+            <% if user_signed_in? %>
+          <ul class="center-ul">
+              <!--<li>-->
+              <!--  <%#= search_form_for @q, url: search_exhibitions_path do |f| %>-->
+              <!--    <%#= f.search_field :title_cont,placeholder: '検索するテキストを入力...' %>-->
+              <!--    <%#= f.submit '検索' %>-->
+              <!--  <%# end %>-->
+              <!--</li>-->
+              <li class="center-list">
+                <%= link_to "about", about_path, class: "header-link" %>
+              </li>
+              <li class="center-list">
+                <%= link_to 'exhibition', categories_path, class: "header-link" %>
+              </li>
+              <li>
+                <%= link_to 'exhibitor', users_path, class: "header-link" %>
+              </li>
+          </ul>
+          <ul class="right-ul">
+            <li>
+                <%= link_to 'my page', user_path(current_user.id), class: "header-link" %>
+              </li>
+              <li>
+                <%= link_to '作品を投稿', new_exhibition_path, class: "header-link" %>
+              </li>
+              <li>
+              <li>
+                <%= link_to "log out", destroy_user_session_path, method: :delete, class: "header-link" %>
+              </li>
+          </ul>
+            <% elsif admin_signed_in? %>
+          <ul class="center-ul">
+              <li class="center-list">
+                <%= link_to "user", admin_users_path, class: "header-link" %>
+              </li>
+              <li>
+                <%= link_to "category", admin_categories_path, class: "header-link" %>
+              </li>
+          </ul>
+          <ul class="right-ul">
+              <li>
+                <%= link_to "log out", destroy_admin_session_path, method: :delete, class: "header-link" %>
+              </li>
+          </ul>
+            <% else %>
+            <ul class="center-ul">
+              <li class="center-list">
+                <%= link_to "about", about_path, class: "header-link" %>
+              </li>
+              <li class="center-list">
+                <%= link_to 'exhibition', categories_path, class: "header-link" %>
+              </li>
+              <li>
+                <%= link_to 'exhibitor', users_path, class: "header-link" %>
+              </li>
+          </ul>
+          <ul class="right-ul">
+              <li>
+                <%= link_to "sign up", new_user_registration_path, class: "header-link" %>
+              </li>
+              <li>
+                <%= link_to "log in", new_user_session_path, class: "header-link" %>
+              </li>
+          </ul>
+            <% end %>
+          </ul>
         </div>
       </nav>
     </header>

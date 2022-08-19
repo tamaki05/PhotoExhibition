@@ -26,10 +26,37 @@
 
 }
 
+.link-blue{
+    text-decoration: none;
+    color: #4689FF ;
+}
+
 .header-link {
     text-decoration: none;
-    color: #fff ;
+    color: black ;
 }
+
+
+// ナビバー内のレイアウト
+.navbar-brand{
+    color: #4689FF
+}
+.center-ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.center-list {
+    list-style-type: none;
+    padding-right: 30px;
+}
+
+
+
+
+
 
 // form用ボタン色(グレーにするところ)
 .btn-form-gray {
@@ -66,7 +93,6 @@
     color: #000000;
 
 }
-
 
 
 // // フォント変更
