@@ -28,7 +28,7 @@
 
 .link-blue{
     text-decoration: none;
-    color: #4689FF ;
+    color: #00FFFF ;
 }
 
 .header-link {
@@ -39,7 +39,7 @@
 
 // ナビバー内のレイアウト
 .navbar-brand{
-    color: #4689FF
+    color: #4169E1
 }
 .center-ul {
     display: flex;
@@ -49,14 +49,37 @@
 }
 
 .center-list {
+    text-align: center;
+    font-size: 20px;
     list-style-type: none;
     padding-right: 30px;
 }
+.list-text {
+    font-size: 12px;
+}
+
+.right-ul{
+    text-align: right;
+}
 
 
+.search-text{
+	width: 200px;/*テキスト入力エリアが伸びる前の横幅*/
+	height: 60px;
+    padding: 10px;
+}
 
+.search-btn {
+    font-size: 14px;
+    height: 40px;
+    width: 50px;
+    border: none;  /* 枠線を消す */
+    outline: none; /* クリックしたときに表示される枠線を消す */
+    border-radius: 20px;
+    background: #EEEEEE; //ボタンの背景色
+    color: #000000; //ボタンのテキストの色
 
-
+}
 
 // form用ボタン色(グレーにするところ)
 .btn-form-gray {

@@ -18,29 +18,42 @@
     <header class="sticky-top"> <!--sticky-topでheader固定-->
       <nav class="navbar">
         <a class="navbar-brand" href="/">PhotoExhibition</a>
-        <!--<button class="navbar-toggler" type="button" data-toggler="collapse"data-target="#navbarNavDropdown"-->
-        <!--              aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">-->
-        <!--  <span class="navbar-toggler-icon"></span>-->
-        <!--</button>-->
             <% if user_signed_in? %>
           <ul class="center-ul">
-              <!--<li>-->
-              <!--  <%#= search_form_for @q, url: search_exhibitions_path do |f| %>-->
-              <!--    <%#= f.search_field :title_cont,placeholder: '検索するテキストを入力...' %>-->
-              <!--    <%#= f.submit '検索' %>-->
-              <!--  <%# end %>-->
-              <!--</li>-->
               <li class="center-list">
                 <%= link_to "about", about_path, class: "header-link" %>
+                <p class="list-text"><%= link_to "-概要-", about_path, class: "header-link" %></p>
               </li>
               <li class="center-list">
                 <%= link_to 'exhibition', categories_path, class: "header-link" %>
+                <p class="list-text"><%= link_to '-展示一覧-', categories_path, class: "header-link" %></p>
               </li>
-              <li>
+              <li class="center-list">
                 <%= link_to 'exhibitor', users_path, class: "header-link" %>
+                <p class="list-text"><%= link_to '-展示者-', users_path, class: "header-link" %></p>
               </li>
           </ul>
           <ul class="right-ul">
+            <!--<li>-->
+            <!--  <table>-->
+            <!--    <div class="search_container">-->
+            <!--      <%#= search_form_for @q, url: search_exhibitions_path do |f| %>-->
+            <!--    <tr>-->
+            <!--      <th></th>-->
+            <!--      <th></th>-->
+            <!--    </tr>-->
+            <!--    <tr>-->
+            <!--      <td>-->
+            <!--        <div class="search-text">-->
+            <!--         <%#= f.search_field :title_cont,placeholder: '検索するテキストを入力...', class: "form-control"%>-->
+            <!--        </div>-->
+            <!--      </td>-->
+            <!--      <td><input class="search-btn" type="submit" value="検索"></td>-->
+            <!--    </tr>-->
+            <!--    <%# end %>-->
+            <!--  </table>-->
+            <!--    </div>-->
+            <!--  </li>-->
             <li>
                 <%= link_to 'my page', user_path(current_user.id), class: "header-link" %>
               </li>
@@ -70,12 +83,15 @@
             <ul class="center-ul">
               <li class="center-list">
                 <%= link_to "about", about_path, class: "header-link" %>
+                <p class="list-text"><%= link_to "-概要-", about_path, class: "header-link" %></p>
               </li>
               <li class="center-list">
                 <%= link_to 'exhibition', categories_path, class: "header-link" %>
+                <p class="list-text"><%= link_to '-展示一覧-', categories_path, class: "header-link" %></p>
               </li>
-              <li>
+              <li class="center-list">
                 <%= link_to 'exhibitor', users_path, class: "header-link" %>
+                <p class="list-text"><%= link_to '-展示者-', users_path, class: "header-link" %></p>
               </li>
           </ul>
           <ul class="right-ul">
