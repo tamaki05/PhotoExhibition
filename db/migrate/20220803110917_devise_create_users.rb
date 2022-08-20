@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :extemal_link
 
       #会員ステータスのカラム
-      t.boolean :is_deleted, null:false, default: false
+      t.boolean :is_deleted, null: false, default: false
 
       ## Recoverable
       t.string   :reset_password_token

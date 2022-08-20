@@ -38,7 +38,7 @@
       </table>
     </div><br>
     <div class="d-grid gap-2 col-6 mx-auto text-center">
-      <%= link_to '会員情報編集', edit_admin_user_path(@user.id), class: "btn btn-outline-success" %>
+      <%= link_to '会員情報編集', edit_admin_user_path(@user.id), class: "btn btn-outline-success",data: {"turbolinks"=>false} %>
       <%= link_to 'コメント一覧', comments_admin_user_path(@user), class: "btn btn-outline-success" %>
       <%= link_to 'ユーザー一覧', admin_users_path, class: "btn btn-outline-success" %>
     </div>
