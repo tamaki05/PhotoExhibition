@@ -10,19 +10,20 @@
             <% end %>
            <% end %>
         </ul>
-        <%= link_to '展示一覧', exhibitions_user_path(@user), class: "link" %>
       </div>
 
         <div class="col-4">
+          <h4><strong><i class="fa-solid fa-address-card"></i> Profile</strong></h4><br>
           <p><%= image_tag @user.get_profile_image(600, 600), class: "rounded-circle", size: "100x100" %></p>
-          <p><%= @user.nickname %></p>
-          <p><%= @user.profile %></p>
-          <p><%= @user.extemal_link %></p>
-          <p><%= link_to 'いいね一覧', favorites_user_path(@user), class: "link" %></p>
+          <p><i class="fa-solid fa-user"></i> <%= @user.nickname %></p>
+          <p><i class="fa-solid fa-comment"></i><br> <%= @user.profile %></p>
+          <p><i class="fa-solid fa-arrow-up-right-from-square"></i><br> <%= @user.extemal_link %></p>
+          <p><i class="fa-solid fa-camera-retro"></i> <%= link_to '展示作品', exhibitions_user_path(@user), class: "link" %></p>
+          <p><i class="fa-solid fa-heart"></i> <%= link_to 'いいねした作品', favorites_user_path(@user), class: "link" %></p>
 
           <!--ログインユーザー以外は編集できないようにする-->
           <% if @user == current_user %>
-            <p><%= link_to 'プロフィールを編集', edit_user_path(@user), class: "btn btn-sm btn-success" %>
+            <p><%= link_to 'プロフィールを編集', edit_user_path(@user), class: "btn btn-outline-secondary" %>
           <% end %>
           <!--ゲストはプロフィール編集できないようにする-->
           <% if @user.name != "guestuser" %>
