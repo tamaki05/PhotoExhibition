@@ -3,38 +3,36 @@
     <div class="row">
       <div class="col-11 col-md-8 col-lg-10 mx-auto">
         <div class="text-center">
-          <p><%= image_tag @exhibition.get_image(700,700) %></p><br>
+          <p><%= image_tag @exhibition.get_image(600,600) %></p><br>
         </div>
       </div>
-    </div>
-    <div class="row">
       <div class="col-11 col-md-6 col-lg-6 mx-auto">
         <div class="text-center">
+          <p><%= image_tag @exhibition.user.get_profile_image(600, 600), class: "rounded-circle", size: "50x50" %>  <%= @exhibition.user.name %></p>
           <p>「<%= @exhibition.title %>」</p>
           <p><%= @exhibition.introduction %></p>
+          <table align="center">
+            <tr>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td>
+                <div id="favorite_buttons_<%= @exhibition.id %>">
+                <!--いいねの部分テンプレート-->
+                <%= render "public/favorites/favorites", exhibition: @exhibition %>
+                </div>
+              </td>
+              <td>
+                <!--コメント機能-->
+                <%= link_to comments_exhibition_path(@exhibition) do %>
+                  <i class="fa-solid fa-comment-dots fa-2x" style="color: silver;"></i>
+                <% end %>
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
-      </div>
-      <div class="col-lg-1">
-        <div class="text-center" id="favorite_buttons_<%= @exhibition.id %>">
-          <!--いいねの部分テンプレート-->
-          <%= render "public/favorites/favorites", exhibition: @exhibition %>
-        </div>
-      </div>
-      <div class="col-lg-1">
-        <div class="text-center" >
-          <!--コメント機能-->
-          <%= link_to comments_exhibition_path(@exhibition) do %>
-            <i class="fa-solid fa-comment-dots fa-3x" style="color: silver;"></i>
-          <% end %>
-        </div>
-      </div>
-          <!--ログイン中のユーザー以外は編集、削除できないようにする-->
-          <% if @exhibition.user == current_user %>
-            <p><%= link_to "編集", edit_exhibition_path(@exhibition.id) %></p>
-            <p><%= link_to "削除", exhibition_path(@exhibition.id), method: :delete, "date-confirm" => "本当に削除しますか？" %></p>
-          <% end %>
-    </div>
-
       </div>
     </div>
   </div>
