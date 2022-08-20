@@ -12,10 +12,13 @@
         <div class="col-lg-3">
           <%= link_to exhibition_path(exhibition.id) do %>
             <%= image_tag exhibition.get_image(600,600), size: "200x200" %>
+          <% end %><br><br>
+          <div class="text-center">
+            <%= link_to user_path(exhibition.user.id), class: "link" do %>
+            <i class="fa-solid fa-camera-retro"></i><%= exhibition.user.name %>
           <% end %>
-          <%= link_to user_path(exhibition.user.id) do %>
-            <%= exhibition.user.name %>
-          <% end %>
+          </div>
+
         </div>
       <% end %>
     </div>

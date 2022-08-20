@@ -16,105 +16,103 @@
     <script src="https://kit.fontawesome.com/3a91f848bc.js" crossorigin="anonymous"></script>
   </head>
 
-    <header class="sticky-top"> <!--sticky-topでheader固定-->
-      <nav class="navbar">
-        <a class="navbar-brand" href="/"><i class="fa-solid fa-camera-retro"></i>PhotoExhibition</a>
-            <% if user_signed_in? %>
-          <ul class="center-ul">
-              <li class="center-list">
-                <%= link_to "about", about_path, class: "header-link" %>
-                <p class="list-text"><%= link_to "-概要-", about_path, class: "header-link" %></p>
-              </li>
-              <li class="center-list">
-                <%= link_to 'exhibition', categories_path, class: "header-link" %>
-                <p class="list-text"><%= link_to '-展示一覧-', categories_path, class: "header-link" %></p>
-              </li>
-              <li class="center-list">
-                <%= link_to 'exhibitor', users_path, class: "header-link" %>
-                <p class="list-text"><%= link_to '-展示者-', users_path, class: "header-link" %></p>
-              </li>
-          </ul>
-          <!--グローバルナビゲーション-->
-          <div class="openbtn"><span></span><span></span><span></span></div>
-          <nav id="g-nav">
+  <header class="sticky-top"> <!--sticky-topでheader固定-->
+    <nav class="navbar">
+      <a class="navbar-brand" href="/"><i class="fa-solid fa-camera-retro"></i>PhotoExhibition</a>
+      <% if user_signed_in? %>
+      <ul class="center-ul">
+        <li class="center-list">
+          <%= link_to "about", about_path, class: "header-link" %>
+          <p class="list-text"><%= link_to "-概要-", about_path, class: "header-link" %></p>
+        </li>
+        <li class="center-list">
+          <%= link_to 'exhibition', categories_path, class: "header-link" %>
+          <p class="list-text"><%= link_to '-展示一覧-', categories_path, class: "header-link" %></p>
+        </li>
+        <li class="center-list">
+          <%= link_to 'exhibitor', users_path, class: "header-link" %>
+          <p class="list-text"><%= link_to '-展示者-', users_path, class: "header-link" %></p>
+        </li>
+        </ul>
+        <!--グローバルナビゲーション-->
+        <div class="openbtn"><span></span><span></span><span></span></div>
+        <nav id="g-nav">
           <ul>
             <li>
               <table>
                 <div class="search_container">
                   <%= search_form_for @q, url: search_exhibitions_path do |f| %>
-                <tr>
-                  <th></th>
-                  <th></th>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="search-text">
-                     <%= f.search_field :title_cont,placeholder: 'テキストを入力', class: "form-control"%>
-                    </div>
-                  </td>
-                  <td><input class="search-btn" type="submit" value="検索"></td>
-                </tr>
-                <% end %>
-              </table>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="search-text">
+                       <%= f.search_field :title_cont,placeholder: 'テキストを入力', class: "form-control"%>
+                      </div>
+                    </td>
+                    <td><input class="search-btn" type="submit" value="検索"></td>
+                  </tr>
+                  <% end %>
                 </div>
-              </li>
+              </table>
+            </li>
             <li>
-                <%= link_to 'my page', user_path(current_user.id), class: "header-link" %>
-              </li>
-              <li>
-                <%= link_to '作品を投稿', new_exhibition_path, class: "header-link" %>
-              </li>
-              <li>
-                <%= link_to "log out", destroy_user_session_path, method: :delete, class: "header-link" %>
-              </li>
+              <%= link_to 'my page', user_path(current_user.id), class: "header-link" %>
+            </li>
+            <li>
+              <%= link_to '作品を投稿', new_exhibition_path, class: "header-link" %>
+            </li>
+            <li>
+              <%= link_to "log out", destroy_user_session_path, method: :delete, class: "header-link" %>
+            </li>
           </ul>
-          </div>
-          </nav>
-            <% elsif admin_signed_in? %>
-          <ul class="center-ul">
-              <li class="center-list">
-                <%= link_to "user", admin_users_path, class: "header-link" %>
-              </li>
-              <li class="center-list">
-                <%= link_to "category", admin_categories_path, class: "header-link" %>
-              </li>
-          </ul>
-          <ul class="right-ul">
-              <li>
-                <%= link_to "log out", destroy_admin_session_path, method: :delete, class: "header-link" %>
-              </li>
-          </ul>
-            <% else %>
-            <ul class="center-ul">
-              <li class="center-list">
-                <%= link_to "about", about_path, class: "header-link" %>
-                <p class="list-text"><%= link_to "-概要-", about_path, class: "header-link" %></p>
-              </li>
-              <li class="center-list">
-                <%= link_to 'exhibition', categories_path, class: "header-link" %>
-                <p class="list-text"><%= link_to '-展示一覧-', categories_path, class: "header-link" %></p>
-              </li>
-              <li class="center-list">
-                <%= link_to 'exhibitor', users_path, class: "header-link" %>
-                <p class="list-text"><%= link_to '-展示者-', users_path, class: "header-link" %></p>
-              </li>
-          </ul>
-          <ul class="right-ul">
-              <li>
-                <%= link_to "sign up", new_user_registration_path, class: "header-link" %>
-              </li>
-              <li>
-                <%= link_to "log in", new_user_session_path, class: "header-link" %>
-              </li>
-          </ul>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main class="mb-auto">
-      <%= yield %>
-    </main>
+        </nav>
+      <% elsif admin_signed_in? %>
+        <ul class="center-ul">
+          <li class="center-list">
+            <%= link_to "user", admin_users_path, class: "header-link" %>
+          </li>
+          <li class="center-list">
+            <%= link_to "category", admin_categories_path, class: "header-link" %>
+          </li>
+        </ul>
+        <ul class="right-ul">
+          <li>
+            <%= link_to "log out", destroy_admin_session_path, method: :delete, class: "header-link" %>
+          </li>
+        </ul>
+      <% else %>
+        <ul class="center-ul">
+          <li class="center-list">
+            <%= link_to "about", about_path, class: "header-link" %>
+            <p class="list-text"><%= link_to "-概要-", about_path, class: "header-link" %></p>
+          </li>
+          <li class="center-list">
+            <%= link_to 'exhibition', categories_path, class: "header-link" %>
+            <p class="list-text"><%= link_to '-展示一覧-', categories_path, class: "header-link" %></p>
+          </li>
+          <li class="center-list">
+            <%= link_to 'exhibitor', users_path, class: "header-link" %>
+            <p class="list-text"><%= link_to '-展示者-', users_path, class: "header-link" %></p>
+          </li>
+        </ul>
+        <ul class="right-ul">
+          <li>
+            <%= link_to "sign up", new_user_registration_path, class: "header-link" %>
+          </li>
+          <li>
+            <%= link_to "log in", new_user_session_path, class: "header-link" %>
+          </li>
+        </ul>
+      <% end %>
+      </div>
+    </nav>
+  </header>
+  <main class="mb-auto">
+    <%= yield %>
+  </main>
 </html>
 
 

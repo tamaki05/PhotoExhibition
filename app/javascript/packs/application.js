@@ -116,3 +116,27 @@ $(function() {
 });
 
 });
+
+// テキストは浮かび上がる
+function BlurTextAnimeControl() {
+	$('.text-animation').each(function(){
+		var elemPos = $(this).offset().top-50;
+		var scroll = $(window).scrollTop();
+		var windowHeight = $(window).height();
+		if (scroll >= elemPos - windowHeight){
+		$(this).addClass('blur');
+		}else{
+		$(this).removeClass('blur');
+		}
+		});
+}
+
+// 画面をスクロールをしたら動かしたい場合の記述
+$(window).scroll(function () {
+	BlurTextAnimeControl();
+});
+
+// 画面が読み込まれたらすぐに動かしたい場合の記述
+$(window).on('load', function () {
+	BlurTextAnimeControl();
+});
