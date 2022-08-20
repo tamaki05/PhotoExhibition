@@ -116,6 +116,7 @@
 .btn-link-gray {
     height: 40px;
     width: 200px;
+    text-align: center;
     border-radius: 20px;
     display: block;
     text-decoration: none;
@@ -124,6 +125,18 @@
 
 }
 
+// link用ボタン色(レッドにするところ)
+.btn-link-red {
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    border-radius: 20px;
+    display: block;
+    text-decoration: none;
+    background: #DC143C;
+    color: #FFFFFF;
+
+}
 // グローバルナビゲーション
 #g-nav{
     position:fixed;

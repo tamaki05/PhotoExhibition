@@ -20,10 +20,12 @@
                 <p><%= f.text_field :extemal_link, class: "form-control"%></p>
                 <div class="text-center"><%= f.submit '変更を保存', class: "btn-form-blue" %></div>
               <% end %>
-                <div class="text-center"><%= link_to 'キャンセル', user_path(@user.id), class: "btn-link-gray" %></div><br>
-                <div class="text-center"><%= link_to '退会', users_unsubscribe_path, class: "btn-link-gray" %></div>
+                <div class="edit-btn">
+                  <button class = "button-edit"><%= link_to 'キャンセル', user_path(@user.id), class: "btn-link-gray" %></button><br><br>
+                  <button class = "button-edit"><%= link_to '退会', users_unsubscribe_path, class: "btn-link-red" %></button>
+                </div><br>
           </div>
-        </div>
+        </div><br><br>
       </div>
     </div>
   </div>
