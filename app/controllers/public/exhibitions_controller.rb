@@ -1,4 +1,6 @@
 class Public::ExhibitionsController < ApplicationController
+  # ログインしていないユーザーはログイン画面にリダイレクトする
+  before_action :authenticate_user!
 
   def index
     @user = current_user
