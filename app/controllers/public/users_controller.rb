@@ -1,4 +1,6 @@
 class Public::UsersController < ApplicationController
+  # ログインしていないユーザーはログイン画面にリダイレクトする
+  before_action :authenticate_user!, except: [:index]
 
   def index
     @users = User.all
