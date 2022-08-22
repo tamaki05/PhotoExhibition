@@ -87,16 +87,24 @@
 
 // マイページの投稿一覧スライド
 .slider2 {
-    position:relative;
-  z-index: 1;
-  /*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+    width:94%;
+    margin: 0 auto;
 }
-.slider2-item {
-    width: 300px;
-    height: 300px;
+.slider2-image {
+    width: 100%;/*スライダー内の画像を横幅100%に*/
+    height: 50vw;
     object-fit: cover;
+    margin: 0 auto;
 }
 
+.slick-prev,
+.slick-next {
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+}
 /*ドットナビゲーションの設定*/
 .slick-dots {
     text-align:center;
