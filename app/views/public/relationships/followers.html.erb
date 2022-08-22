@@ -8,6 +8,7 @@
       </div>
     </div>
       <% if @users.exists? %>
+      <div class="fadeUp">
         <% @users.each do |user| %>
           <table align="center">
             <thead>
@@ -34,6 +35,7 @@
         <% end %>
       <% else %>
         <p>フォローされているユーザーはいません</p>
+        </div>
       <% end %>
   </div>
 </div>

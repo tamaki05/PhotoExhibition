@@ -3,19 +3,23 @@
     <div class="row">
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
         <div class="text-center">
-          <h4><strong>展示者一覧</strong></h4><br>
+          <h4><strong>展示者一覧</strong></h4><br><br>
         </div>
       </div>
     </div>
     <div class="row">
       <% @users.each do |user| %>
         <div class="col-lg-3">
-          <%= image_tag user.get_profile_image(600, 600), class: "rounded-circle", size: "100x100" %>
-          <%= link_to user_path(user.id), class: "link" do %>
-            <%= user.name %><br><br>
-          <% end %>
+          <div class="fadeUp">
+            <%= image_tag user.get_profile_image(600, 600), class: "rounded-circle", size: "100x100" %>
+          </div>
+          <div class="fadeUp">
+            <%= link_to user_path(user.id), class: "link" do %>
+              <%= user.name %><br><br>
+          </div>
+            <% end %>
         </div>
-        <% end %>
+      <% end %>
     </div>
   </div>
 </div>

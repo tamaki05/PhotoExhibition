@@ -140,3 +140,5 @@ $(window).scroll(function () {
 $(window).on('load', function () {
 	BlurTextAnimeControl();
 });
+
+

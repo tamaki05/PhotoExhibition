@@ -5,9 +5,11 @@
   <div class="zoomIn"><a href="#"><span class="mask">
     <ul class="gallery">
       <% @exhibition.each do |exhibition|%>
-        <%= link_to exhibition_path(exhibition.id) do %>
-          <li><%= image_tag exhibition.get_image(600,600) %></li>
-        <% end %>
+        <div class="fadeUp">
+          <%= link_to exhibition_path(exhibition.id) do %>
+            <li><%= image_tag exhibition.get_image(600,600) %></li>
+          <% end %>
+        </div>
       <% end %>
     </ul>
   </span></a></div>
