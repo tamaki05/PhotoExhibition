@@ -1,7 +1,7 @@
 # PhotoExhibition
 
 ## サイト概要
-![top画面](images/readme.png)
+![top画面](app/assets/images/readme.png)
 
 ### サイトテーマ
 様々な個性あふれる作品と出会えるようなコミュニティサイト
