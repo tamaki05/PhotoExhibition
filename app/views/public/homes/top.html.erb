@@ -1,16 +1,18 @@
-<div class="container">
-  <div class="text-center">
-    <h1><span class="text-animation">PhotoExhibition</span></h1><br>
+<div class=" d-flex align-items-center justify-content-center pt-5">
+  <div class="container">
+    <div class="text-center">
+      <h1><span>PhotoExhibition</span></h1><br>
+    </div>
+    <div class="zoomIn"><a href="#"><span class="mask">
+      <ul class="gallery">
+        <% @exhibition.each do |exhibition|%>
+          <div class="fadeUp">
+            <%= link_to exhibition_path(exhibition.id) do %>
+              <li><%= image_tag exhibition.get_image(600,600) %></li>
+            <% end %>
+          </div>
+        <% end %>
+      </ul>
+    </span></a></div>
   </div>
-  <div class="zoomIn"><a href="#"><span class="mask">
-    <ul class="gallery">
-      <% @exhibition.each do |exhibition|%>
-        <div class="fadeUp">
-          <%= link_to exhibition_path(exhibition.id) do %>
-            <li><%= image_tag exhibition.get_image(600,600) %></li>
-          <% end %>
-        </div>
-      <% end %>
-    </ul>
-  </span></a></div>
 </div>

@@ -141,4 +141,3 @@ $(window).on('load', function () {
 	BlurTextAnimeControl();
 });
 
-

@@ -9,6 +9,7 @@ class Public::ExhibitionsController < ApplicationController
 
   def show
     @exhibition = Exhibition.find(params[:id])
+    @user = @exhibition.user
   end
 
   def new
@@ -45,7 +46,7 @@ class Public::ExhibitionsController < ApplicationController
     comments = Comment.where(exhibition_id: @exhibition.id).pluck(:user_id)
     @comment_users = User.find(comments)
   end
-  
+
   # 検索(ransack)
   def search
     @results = @q.result

@@ -8,7 +8,10 @@
       </div>
       <div class="col-11 col-md-6 col-lg-6 mx-auto">
         <div class="text-center">
-          <p><%= image_tag @exhibition.user.get_profile_image(600, 600), class: "rounded-circle", size: "50x50" %>  <%= @exhibition.user.name %></p>
+          <p><%= image_tag @exhibition.user.get_profile_image(600, 600), class: "rounded-circle", size: "50x50" %>
+          <%= link_to user_path(@user.id), class: "link" do %>
+            <%= @exhibition.user.name %></p>
+          <% end %>
           <p>「<%= @exhibition.title %>」</p>
           <p><%= @exhibition.introduction %></p>
           <table align="center">

@@ -1,19 +1,14 @@
-<div class=" d-flex align-items-center justify-content-center pt-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-11 col-md-8 col-lg-6 mx-auto pt-5">
-        <div class="card shadow">
-          <div class="card-body text-center pt-5">
-              <%= form_with model: @exhibition do |f| %>
-                <%= f.file_field :image, accept: "image/*"%><br><br>
-                <%= f.text_field :title, placeholder: "タイトル", class: "form-control" %>
-                <%= f.text_area :introduction, placeholder: "キャプション", class: "form-control" %><br>
-                <%= f.collection_select :category_id, @categories, :id, :name, {prompt: "カテゴリー選択"}, {class: "form-control input-sm"} %><br>
-                <input class="btn-form-gray" type="submit" value="展示する"></p>
-              <% end %>
-          </div>
-        </div>
-      </div>
+<div class="col-9 col-md-6 col-lg-4 mx-auto pt-5">
+  <div class="card shadow">
+    <div class="card-body text-center pt-5">
+      <h2>作品を展示</h2><br><br>
+      <%= form_with model: @exhibition do |f| %>
+        <%= f.file_field :image, accept: "image/*"%><br><br><br>
+        <%= f.text_field :title, placeholder: "タイトル", class: "form-control" %>
+        <%= f.text_area :introduction, placeholder: "キャプション", class: "form-control" %><br>
+        <%= f.collection_select :category_id, @categories, :id, :name, {prompt: "カテゴリー選択"}, {class: "form-control input-sm"} %><br><br>
+        <input class="btn-form-gray" type="submit" value="展示する"></p><br>
+      <% end %>
     </div>
   </div>
 </div>

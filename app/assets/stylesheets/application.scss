@@ -38,8 +38,11 @@
 
 
 // ナビバー内のレイアウト
+.navbar{
+    height: 60px;
+}
+
 .navbar-brand{
-    border-left: 1px solid black;
     color: black;
     padding: 10px;
     font-family: 'Pathway Gothic One', sans-serif;
@@ -50,7 +53,6 @@
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 30px;
 
 }
 
@@ -73,6 +75,17 @@
     text-align: right;
     border-right: 1px solid black;
     padding: 10px;
+}
+
+
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	right: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
 }
 
 .search-text{
@@ -150,7 +163,7 @@
     right: -120%;
 	width:100%;
     height: 100vh;/*ナビの高さ*/
-	background:#999;
+	background:	#D9E5FF;
 	transition: all 0.6s;
 }
 #g-nav.panelactive{
@@ -179,16 +192,6 @@
 	font-weight: bold;
 }
 
-.openbtn{
-	position:fixed;
-    z-index: 9999;/*ボタンを最前面に*/
-	top:10px;
-	right: 10px;
-	cursor: pointer;
-    width: 50px;
-    height:50px;
-    margin-top: 25px;
-}
 
 /*×に変化*/
 .openbtn span{
@@ -284,4 +287,30 @@ opacity:0;
 h1 {
   font-family: 'Pathway Gothic One', sans-serif;
   font-style: italic;/*これが必要*/
+}
+
+
+// 背景色
+
+
+body{
+    background-image: url(bokasiari.png);
+    background-size: cover;
+}
+
+.sticky-top{
+    background-color: white;
+}
+
+footer{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 120px;
+    background-color: white;
+}
+
+.container {
+    background-color: white;
+    padding: 50px 50px 50px 50px;
 }
