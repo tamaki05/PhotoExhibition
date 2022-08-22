@@ -1,57 +1,52 @@
-<div class=" d-flex align-items-center justify-content-center pt-5">
-  <div class="container">
-    <div class="row">
-      <div class="col-11 col-md-8 col-lg-6 mx-auto">
-        <div class="card shadow">
-          <div class="card-body text-secondary text-center">
-            <h2>Sign up</h2><br>
+<div class="col-9 col-md-6 col-lg-4 mx-auto pt-5">
+  <div class="card shadow">
+    <div class="card-body text-secondary text-center">
+      <h2>Sign up</h2><br>
 
-            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= render "public/shared/error_messages", resource: resource %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "public/shared/error_messages", resource: resource %>
 
-            <div class="field">
-              <%= f.text_field :name, placeholder: "名前", class: "form-control" %>
-            </div>
-
-            <div class="field">
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
-            </div>
-
-            <div class="field">
-              <%# if @minimum_password_length %>
-              <!--<em>(<%#= @minimum_password_length %> characters minimum)</em>-->
-              <!--<%# end %><br />-->
-              <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: "form-control" %>
-            </div>
-
-            <div class="field">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード(確認用)", class: "form-control" %>
-            </div><br>
-
-            <div class="actions">
-              <%= f.submit "Sign up", class: "btn-form-gray" %>
-            </div><br>
-            <% end %>
-
-            <p>アカウントをお持ちの方は<br>
-              <%= link_to "こちら", new_user_session_path %>からログイン</p>
-            <p>または
-              <%= link_to "ゲスト", users_guest_sign_in_path, method: :post %>としてログイン</p>
-
-            <%#= render "public/shared/links" %>
-
-            <!--背景のスライド-->
-            <ul class="background">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-          </div>
-        </div>
+      <div class="field">
+        <%= f.text_field :name, placeholder: "名前", class: "form-control" %>
       </div>
+
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%# if @minimum_password_length %>
+        <!--<em>(<%#= @minimum_password_length %> characters minimum)</em>-->
+        <!--<%# end %><br />-->
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード(6文字以上)", class: "form-control" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード(確認用)", class: "form-control" %>
+      </div><br>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "btn-form-gray" %>
+      </div><br>
+      <% end %>
+
+      <p>アカウントをお持ちの方は<br>
+        <%= link_to "こちら", new_user_session_path %>からログイン</p>
+      <p>または
+        <%= link_to "ゲスト", users_guest_sign_in_path, method: :post %>としてログイン</p>
+
+      <%#= render "public/shared/links" %>
+
+      <!--背景のスライド-->
+      <ul class="background">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   </div>
 </div>
+
 
 

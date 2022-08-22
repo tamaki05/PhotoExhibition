@@ -27,20 +27,20 @@
     animation: anime 40s linear 0s infinite ;
 }
 .background li:nth-child(1) {
-    background-image: url(sakura.jpg)
+    background-image: url(login1.jpg)
 }
 .background li:nth-child(2) {
-    background-image: url(sora.jpg);
+    background-image: url(login2.png);
     -webkit-animation-delay: 10s;
     animation-delay: 10s;
 }
 .background li:nth-child(3) {
-    background-image: url(kagami.jpg);
+    background-image: url(login3.jpg);
     -webkit-animation-delay: 20s;
     animation-delay: 20s;
 }
 .background li:nth-child(4) {
-    background-image: url(syabonndama.jpg);
+    background-image: url(login4.jpg);
     -webkit-animation-delay: 30s;
     animation-delay: 30s;
 }
