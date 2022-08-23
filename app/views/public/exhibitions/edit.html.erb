@@ -5,16 +5,12 @@
         <div class="card shadow">
           <div class="card-body text-center">
             <h1>編集画面</h1>
-
             <%= form_with model: @exhibition do |f| %>
               <p>タイトル</p>
               <%= f.text_field :title %>
-
               <p>紹介文</p>
               <%= f.text_field :introduction %><br>
-
               <%= f.submit '更新' %>
-
             <% end %>
           </div>
         </div>

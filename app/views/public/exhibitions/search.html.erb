@@ -4,7 +4,6 @@
       <div class="col-11 col-md-8 col-lg-6 mx-auto">
         <div class="text-center">
           <h4><i class="fa-solid fa-image"></i>「<%= params[:q][:title_cont] %>」のギャラリー</h4><br>
-
           <% @results.each do |exhibition| %>
             <%= link_to exhibition_path(exhibition.id) do %>
               <%= image_tag exhibition.get_image(600,600), size: "200x200" %>
