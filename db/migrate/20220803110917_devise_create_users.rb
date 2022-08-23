@@ -8,7 +8,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
       t.string :encrypted_password, null: false, default: ""
       #追加カラム
       t.string :name,               null: false
-      t.string :nickname
       t.text :profile
       t.string :extemal_link
 

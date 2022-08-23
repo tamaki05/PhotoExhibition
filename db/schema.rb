@@ -93,7 +93,6 @@ ActiveRecord::Schema.define(version: 2022_08_20_083018) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "name", null: false
-    t.string "nickname"
     t.text "profile"
     t.string "extemal_link"
     t.boolean "is_deleted", default: false, null: false
