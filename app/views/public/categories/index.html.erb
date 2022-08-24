@@ -14,16 +14,16 @@
       <div class="zoomIn"><a href="#"><span class="mask">
         <% @categories.each do |category| %>
         <li><%= link_to category.name, category_path(category.id), class: "link-black" %></li><br>
-            <% if category.id == 5  %>
+            <% if category.id == @category_first_index  %>
               <%= link_to image_tag("huukei.jpg", size: "500x200"), category_path(category.id) %><br><br><br>
             <% end %>
-            <% if category.id == 6  %>
+            <% if category.id == (@category_first_index + 1)  %>
               <%= link_to image_tag("doubutu.jpg", size: "500x200"), category_path(category.id) %><br><br><br>
             <% end %>
-            <% if category.id == 7  %>
+            <% if category.id == (@category_first_index + 2)  %>
               <%= link_to image_tag("jinnbutu.jpg", size: "500x200"), category_path(category.id) %><br><br><br>
             <% end %>
-            <% if category.id == 8  %>
+            <% if category.id == (@category_first_index + 3)  %>
               <%= link_to image_tag("art.jpg", size: "500x200"), category_path(category.id) %><br><br><br>
             <% end %>
          <% end %>

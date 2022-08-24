@@ -1,6 +1,7 @@
 class Public::CategoriesController < ApplicationController
   def index
     @categories = Category.all
+    @category_first_index  = @categories.first.id
   end
 
   def show
