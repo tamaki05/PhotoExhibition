@@ -5,7 +5,7 @@
       <%= form_with model: @exhibition do |f| %>
         <p>タイトル</p>
         <p><%= f.text_field :title, class: "form-control" %></p>
-        <p>紹介文</p>
+        <p>キャプション</p>
         <p><%= f.text_field :introduction, class: "form-control" %></p><br>
         <div class="text-center"><%= f.submit '更新する', class: "btn-form-blue" %></div><br>
       <% end %>
