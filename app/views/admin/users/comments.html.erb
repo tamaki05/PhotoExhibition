@@ -16,7 +16,7 @@
         <tr>
           <% @user.comments.each do |comment| %>
             <td width="200" height="50"><%= comment.message %></td>
-            <td width="200" height="50"><%= link_to "削除", admin_comment_path(comment.id), method: :delete, class: "btn btn-outline-success" %></td>
+            <td width="200" height="50"><%= link_to "削除", admin_comment_path(comment.id), method: :delete, class: "btn btn-outline-success", data: {confirm: "本当に削除しますか？"} %></td>
           <% end %>
         </tr>
       </table>
