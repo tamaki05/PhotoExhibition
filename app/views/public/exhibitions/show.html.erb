@@ -28,8 +28,8 @@
               </td>
               <td>
                 <!--コメント機能-->
-                <%= link_to comments_exhibition_path(@exhibition) do %>
-                  <i class="fa-solid fa-comment-dots fa-2x" style="color: silver;"></i>
+                <%= link_to comments_exhibition_path(@exhibition), class: "link" do %>
+                  <i class="fa-solid fa-comment-dots fa-2x" style="color: silver;"></i><%= @exhibition.comments.count %>
                 <% end %>
                 </div>
               </td>
