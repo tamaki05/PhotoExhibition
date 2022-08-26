@@ -21,9 +21,11 @@
           <tbody>
             <tr>
               <td width="60"><%= image_tag user.get_profile_image(600, 600), class: "rounded-circle", size: "50x50" %></td>
-              <td><strong><%= user.name %></strong><br>
-                          <%= user.profile %></td>
-                    
+              <td>
+                <%= link_to user_path(user.id), class: "link" do %>
+                  <strong><%= user.name %></strong><br>
+                <% end %>
+
                   <!--自分はフォローできないようにする-->
               <td><% unless user == current_user %>
                     <% if current_user.following?(user) %>
