@@ -4,11 +4,15 @@
       <div class="col-lg-8">
         <ul class="slider2">
           <!--投稿した画像のスライド-->
-          <% @user_exhibitions.each do |exhibition| %>
-            <%= link_to exhibition_path(exhibition.id) do %>
-              <%= image_tag exhibition.get_image(600,600) %>
+          <%# if @user_exhibitions > 0 %>
+            <% @user_exhibitions.each do |exhibition| %>
+              <%= link_to exhibition_path(exhibition.id) do %>
+                <%= image_tag exhibition.get_image(600,600) %>
+              <% end %>
             <% end %>
-           <% end %>
+          <%# else %>
+            <!--<p>まだ投稿はありません</p>-->
+          <%# end %>
         </ul>
       </div>
 
