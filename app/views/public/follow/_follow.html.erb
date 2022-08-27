@@ -1,0 +1,9 @@
+<!--フォロー機能実装-->
+<% unless user == current_user %>　<!--自分のページには表示しない-->
+  <p><% if current_user.following?(user) %>
+      <%= link_to "フォロー外す", user_relationships_path(user.id), method: :delete, remote: true, class: "btn btn-info" %>
+<% else %>
+      <%= link_to "フォローする", user_relationships_path(user.id), method: :post, remote: true, class: "btn btn-info"  %>
+     <% end %>
+<% end %>
+  </p><br>
