@@ -42,24 +42,26 @@
         <nav id="g-nav">
           <ul>
             <li>
-              <table>
-                <div class="search_container">
-                  <%= search_form_for @q, url: search_exhibitions_path do |f| %>
-                  <tr>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <div class="search-text">
-                       <%= f.search_field :title_cont,placeholder: 'テキストを入力', class: "form-control",data: {"turbolinks"=>false} %>
-                      </div>
-                    </td>
-                    <td><input class="search-btn" type="submit" value="検索"></td>
-                  </tr>
-                  <% end %>
-                </div>
-              </table>
+              <!--検索機能-->
+              <div class="search_container">
+                <%= search_form_for @q, url: search_exhibitions_path do |f| %>
+                  <table>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="search-text">
+                         <%= f.search_field :title_cont,placeholder: 'テキストを入力', class: "form-control",data: {"turbolinks"=>false} %>
+                        </div>
+                      </td>
+                      <td><input class="search-btn" type="submit" value="検索"></td>
+                    </tr>
+                  </table>
+                <% end %>
+              </div>
+
             </li>
             <li>
               <%= link_to 'my page', user_path(current_user.id), class: "header-link" %>
