@@ -8,24 +8,26 @@
       </div>
     </div>
     <% if @favorite_exhibitions.size > 0 %>
-      <% @favorite_exhibitions.each do |exhibition|%>
-        <div class="fadeUp">
-          <div class="col-lg-3">
-            <%= link_to exhibition_path(exhibition.id) do %>
-              <%= image_tag exhibition.get_image(600,600), size: "200x200" %>
-            <% end %><br><br>
-          </div>
+      <div class="row">
+        <% @favorite_exhibitions.each do |exhibition|%>
           <div class="fadeUp">
-            <div class="text-center">
-              <%= link_to user_path(exhibition.user.id), class: "link" do %>
-                <i class="fa-solid fa-camera-retro"></i><%= exhibition.user.name %>
-              <% end %>
+            <div class="col-lg-3">
+              <%= link_to exhibition_path(exhibition.id) do %>
+                <%= image_tag exhibition.get_image(600,600), size: "200x200" %>
+              <% end %><br><br>
+            </div>
+            <div class="fadeUp">
+              <div class="text-center">
+                <%= link_to user_path(exhibition.user.id), class: "link" do %>
+                  <i class="fa-solid fa-camera-retro"></i><%= exhibition.user.name %>
+                <% end %>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     <% else %>
-      <p class=text-center>いいねした作品はありません。</p>
+      <p class="text-center">いいねした作品はありません。</p>
     <% end %>
   </div>
 </div>
