@@ -7,7 +7,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <% if @favorite_exhibitions.size > 0 %>
       <% @favorite_exhibitions.each do |exhibition|%>
         <div class="fadeUp">
           <div class="col-lg-3">
@@ -24,6 +24,8 @@
           </div>
         </div>
       <% end %>
-    </div>
+    <% else %>
+      <p class=text-center>いいねした作品はありません。</p>
+    <% end %>
   </div>
 </div>
