@@ -2,18 +2,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <ul class="slider2">
+        <% if @user.exhibitions.size > 0 %>
           <!--投稿した画像のスライド-->
-          <%# if @user_exhibitions > 0 %>
+          <ul class="slider2">
             <% @user_exhibitions.each do |exhibition| %>
               <%= link_to exhibition_path(exhibition.id) do %>
                 <%= image_tag exhibition.get_image(600,600) %>
               <% end %>
             <% end %>
-          <%# else %>
-            <!--<p>まだ投稿はありません</p>-->
-          <%# end %>
-        </ul>
+        <% else %>
+            <p class=text-center>まだ投稿はありません</p>
+          </ul>
+        <% end %>
       </div>
 
       <div class="col-4">
