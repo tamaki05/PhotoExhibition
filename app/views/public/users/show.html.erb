@@ -20,17 +20,11 @@
         <h4><strong><i class="fa-solid fa-address-card"></i> Profile</strong></h4><br>
         <p><%= image_tag @user.get_profile_image(600, 600), class: "rounded-circle", size: "100x100" %></p>
         <p><i class="fa-solid fa-user"></i> <%= @user.name %></p>
-        <p><%= link_to user_followings_path(@user.id) do %>
-              <%= @user.followings.count %>
-           <% end %>フォロー中
-           <%= link_to user_followers_path(@user.id) do %>
-              <%= @user.followers.count %>
-           <% end %>フォロワー</p>
 
-           <!--フォロー機能の部分テンプレート-->
-            <div id="follow_btn_<%= @user.id %>">
-              <%= render "public/follow/follow", user: @user %>
-            </div>
+        <!--フォロー機能の部分テンプレート-->
+        <div id="follow_btn_<%= @user.id %>">
+          <%= render "public/follow/follow", user: @user %>
+        </div>
 
         <p><i class="fa-solid fa-comment"></i><br> <%= @user.profile %></p>
         <p><i class="fa-solid fa-arrow-up-right-from-square"></i><br> <%= @user.extemal_link %></p>
