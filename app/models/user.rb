@@ -52,6 +52,9 @@ class User < ApplicationRecord
   def following?(user)
     followings.include?(user)
   end
+  
+  # アカウントの公開・非公開設定
+  enum status: {nonreleased: 0, released: 1}
 
 end
 #

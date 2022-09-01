@@ -43,6 +43,18 @@ class Public::UsersController < ApplicationController
     @exhibitions = @user.exhibitions.all
   end
 
+# アカウントの公開・非公開設定
+  def release
+    @user = current_user
+    @user.released! unless @user.released?
+    redirect_to  user_path(@user)
+  end
+
+  def nonrelease
+    @user = current_user
+    @user.nonreleased! unless @user.nonreleased?
+    redirect_to user_path(@user)
+  end
 
   private
 

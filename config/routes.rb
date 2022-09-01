@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     end
     get 'users/unsubscribe' => 'users#unsubscribe'
     patch 'users/withdraw' => 'users#withdraw'
+    patch 'users/release' => 'users#release'
+    patch 'users/nonrelease' => 'users#nonrelease'
     resources :users, only:[:index, :show, :edit, :update] do
       resource :relationships, only: [:create, :destroy]
         get 'followings' => 'relationships#followings', as: 'followings'
@@ -54,28 +56,3 @@ Rails.application.routes.draw do
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
-
-  # namespace :public do
-  #   get 'exhibitions/index'
-  #   get 'exhibitions/show'
-  #   get 'exhibitions/new'
-  #   get 'exhibitions/edit'
-
-  #   get 'users/index'
-  #   get 'users/show'
-  #   get 'users/edit'
-  #   get 'users/unsubscribe'
-
-    # get 'categories/index'
-    # get 'categories/show'
-
-    # get 'favorites/index'
-
-  # end
-
-  # namespace :admin do
-  #   get 'categories/index'
-  # get 'users/index'
-  # get 'users/show'
-  # get 'users/edit'
-  # end
