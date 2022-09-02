@@ -13,19 +13,38 @@
           <th>name</th>
           <th>email</th>
           <th>user status</th>
+          <th>公開設定</th>
         </tr>
+
         <% @users.each do |user| %>
         <tr>
-          <td  width="200"><%= link_to admin_user_path(user.id) do %>
-          <%= user.name %></td>
-          <% end %>
-          <td width="200"><%= user.email %></td>
+          <td  width="200">
+            <%= link_to admin_user_path(user.id) do %>
+              <%= user.name %>
+          </td>
+        <% end %>
+
+          <td width="200">
+            <%= user.email %>
+          </td>
+
           <!--ユーザーのステータス表示-->
-          <td width="100"><% if user.is_deleted == false %>
-            <span class="text-success"><strong>有効</strong></span>
-          <% else %>
-            <span class="text-secondary"><strong>退会</strong></span>
-          <% end %></td>
+          <td width="100">
+            <% if user.is_deleted == false %>
+              <span class="text-success"><strong>有効</strong></span>
+            <% else %>
+              <span class="text-secondary"><strong>退会</strong></span>
+            <% end %>
+          </td>
+
+          <!--ユーザーの公開設定表示-->
+          <!--<td width="100">-->
+          <!--  <#% if user.status == false %>-->
+          <!--    <span class="text-success"><strong>公開</strong></span>-->
+          <!--  <#% else %>-->
+          <!--    <span class="text-secondary"><strong>非公開</strong></span>-->
+          <!--  <#% end %>-->
+          <!--</td>-->
         </tr>
         <% end %>
       </table>
