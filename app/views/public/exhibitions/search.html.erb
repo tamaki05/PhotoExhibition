@@ -5,8 +5,11 @@
         <div class="text-center">
           <h4><i class="fa-solid fa-image"></i>「<%= params[:q][:title_cont] %>」のギャラリー</h4><br>
           <% @results.each do |exhibition| %>
-            <%= link_to exhibition_path(exhibition.id) do %>
-              <%= image_tag exhibition.get_image(600,600), size: "200x200" %>
+            <%= link_to exhibition_path(exhibition.id), class: "link" do %>
+              <%= image_tag exhibition.get_image(300,300) %><br><br>
+              <div class="text-center">
+                「<%= exhibition.title %>」<br><br>
+              </div>
             <% end %>
           <% end %>
         </div>
