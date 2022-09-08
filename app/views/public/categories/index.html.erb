@@ -14,6 +14,7 @@
       <div class="zoomIn"><a href="#"><span class="mask">
         <% @categories.each do |category| %>
         <li><%= link_to category.name, category_path(category.id), class: "link-black" %></li><br>
+        
             <!--カテゴリー別に写真をつける-->
             <% if category.id == @category_first_index  %>
               <%= link_to image_tag("huukei.jpg", size: "500x200"), category_path(category.id) %><br><br><br>
