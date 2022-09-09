@@ -20,8 +20,11 @@ class Public::ExhibitionsController < ApplicationController
   def create
     @exhibition = Exhibition.new(exhibition_params)
     @exhibition.user_id = current_user.id
-    @exhibition.save
-    redirect_to exhibitions_path
+    if @exhibition.save
+      redirect_to exhibitions_path
+    else
+      render :new
+    end
   end
 
   def edit

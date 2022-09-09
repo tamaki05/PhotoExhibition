@@ -8,6 +8,11 @@ class Exhibition < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :favorited_users, through: :favorites, source: :user
 
+  # バリデーションの設定
+  validates :image, presence: true
+  validates :title, presence: true
+  validates :category_id, presence: true
+
 
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)

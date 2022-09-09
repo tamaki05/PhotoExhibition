@@ -2,6 +2,16 @@
   <div class="card shadow">
     <div class="card-body text-center pt-5">
       <h2>作品を展示</h2><br><br>
+      <!--バリデーションの設定-->
+      <% if @exhibition.errors.any? %>
+        <%= @exhibition.errors.count %>件のエラーが発生しました
+        <ul>
+          <% @exhibition.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <%= form_with model: @exhibition do |f| %>
         <%= f.file_field :image, accept: "image/*"%><br><br><br>
         <%= f.text_field :title, placeholder: "タイトル", class: "form-control" %>
