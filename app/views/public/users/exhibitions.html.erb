@@ -24,12 +24,16 @@
       </div>
     </div>
     <div class="row justify-content-md-center">
-      <% @exhibitions.each do |exhibition| %>
-        <div class="mt-1 pb-10">
-          <%= link_to exhibition_path(exhibition.id) do %>
-            <%= image_tag exhibition.get_image(600,600), size: "200x200" %>
-          <% end %>
-        </div>
+      <% if @user.exhibitions.size > 0 %>
+        <% @exhibitions.each do |exhibition| %>
+          <div class="mt-1 pb-10">
+            <%= link_to exhibition_path(exhibition.id) do %>
+              <%= image_tag exhibition.get_image(600,600), size: "200x200" %>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <p class=text-center>まだ投稿はありません</p>
       <% end %>
     </div>
   </div>
