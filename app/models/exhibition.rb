@@ -11,7 +11,6 @@ class Exhibition < ApplicationRecord
   # バリデーションの設定
   validates :image, presence: true
   validates :title, presence: true
-  validates :category_id, presence: true
 
 
   def favorited_by?(user)

@@ -14,7 +14,7 @@ class Public::ExhibitionsController < ApplicationController
 
   def new
     @exhibition = Exhibition.new
-    @categories = Category.all
+    # @categories = Category.all
   end
 
   def create
