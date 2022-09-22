@@ -30,6 +30,7 @@
         <p><i class="fa-solid fa-arrow-up-right-from-square"></i><br> <%= @user.extemal_link %></p>
         <p><i class="fa-solid fa-camera-retro"></i> <%= link_to '展示作品', exhibitions_user_path(@user), class: "link" %></p>
         <p><i class="fa-solid fa-heart"></i> <%= link_to 'いいねした作品', favorites_user_path(@user), class: "link" %></p>
+        <p>タイムライン</p>
 
         <!--ログインユーザー以外は編集・公開非公開にできないようにする-->
         <% if @user == current_user %>
