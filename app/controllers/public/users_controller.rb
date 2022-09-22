@@ -43,6 +43,9 @@ class Public::UsersController < ApplicationController
     @exhibitions = @user.exhibitions.all
   end
 
+  def timeline
+  end
+
 # アカウントの公開・非公開設定
   def release
     @user = current_user

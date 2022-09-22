@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       end
     end
     get 'users/unsubscribe' => 'users#unsubscribe'
+    get 'users/timeline' => 'users#timeline'
     patch 'users/withdraw' => 'users#withdraw'
     patch 'users/release' => 'users#release'
     patch 'users/nonrelease' => 'users#nonrelease'
