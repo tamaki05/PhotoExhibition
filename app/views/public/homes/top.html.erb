@@ -11,7 +11,10 @@
       <% if user_signed_in? %>
         <%= link_to '作品を投稿', new_exhibition_path, class: "header-link" %>
       <% else %>
-        <%= link_to "sign up", new_user_registration_path, class: "header-link" %>
+        <p>※展示するには会員登録が必要です</p>
+          <%= link_to "sign up", new_user_registration_path, class: "header-link" %>
+        <p>または、ログインしてください。</p>
+          <%= link_to "log in", new_user_session_path, class: "header-link" %>
       <% end %>
     </h5><br><br>
 
