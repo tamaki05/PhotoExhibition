@@ -43,7 +43,10 @@ class Public::UsersController < ApplicationController
     @exhibitions = @user.exhibitions.all
   end
 
+# タイムライン
   def timeline
+    # フォローしているユーザーと自分も含めた全ての投稿を取得する
+    @exhibitions = Exhibition.where(user_id: [current_user.id, *current_user.following_ids])
   end
 
 # アカウントの公開・非公開設定
