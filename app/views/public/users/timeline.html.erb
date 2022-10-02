@@ -1,13 +1,17 @@
 <div class=" d-flex align-items-center justify-content-center pt-5">
   <div class="container">
-    <h4 class="text-center">time line</h4><br><br>
-      <div class="center">
-        <% @exhibitions.each do |exhibition| %>
-          <%= link_to exhibition_path(exhibition.id) do %>
-            <%= image_tag exhibition.get_image(600,600), size: "200x200" %><br>
-            <%= exhibition.title %><br>
+    <div class="text-center">
+      <h4>time line</h4><br><br>
+        <div class="center">
+          <% @exhibitions.each do |exhibition| %>
+            <%= link_to exhibition_path(exhibition.id), class: "link" do %>
+              <%= image_tag exhibition.get_image(600,600), size: "200x200" %><br>
+              <div class="text-center">
+              「<%= exhibition.title %>」<br><br>
+              </div>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+    </div>
   </div>
 </div>
