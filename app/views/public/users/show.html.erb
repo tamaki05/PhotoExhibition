@@ -30,10 +30,11 @@
         <p><i class="fa-solid fa-arrow-up-right-from-square"></i><br> <%= @user.extemal_link %></p>
         <p><i class="fa-solid fa-camera-retro"></i> <%= link_to '展示作品', exhibitions_user_path(@user), class: "link" %></p>
         <p><i class="fa-solid fa-heart"></i> <%= link_to 'いいねした作品', favorites_user_path(@user), class: "link" %></p>
-        <p><%= link_to 'タイムライン', users_timeline_path, class: "link" %></p>
 
-        <!--ログインユーザー以外は編集・公開非公開にできないようにする-->
+
+        <!--ログインユーザー以外はタイムライン表示、編集・公開非公開にできないようにする-->
         <% if @user == current_user %>
+          <p><%= link_to 'タイムライン', users_timeline_path, class: "link" %></p>
           <p><%= link_to 'プロフィールを編集', edit_user_path(@user), class: "btn btn-outline-secondary" %>
           <!--<p><i class="fa-solid fa-key"></i>アカウントの公開設定-->
           <!--  <%# if @user.released? %>-->
