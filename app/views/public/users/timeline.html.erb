@@ -8,7 +8,8 @@
             <%= link_to exhibition_path(exhibition.id), class: "link" do %>
               <%= image_tag exhibition.get_image(600,600), size: "200x200" %><br>
               <div class="text-center">
-              「<%= exhibition.title %>」<br><br>
+              「<%= exhibition.title %>」<br>
+              <%= exhibition.introduction %><br><br>
               </div>
             <% end %>
           <% end %>
