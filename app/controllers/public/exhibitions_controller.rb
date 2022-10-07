@@ -50,6 +50,9 @@ class Public::ExhibitionsController < ApplicationController
     @comment_users = User.find(comments)
   end
 
+  def ranking
+  end
+
   # 検索(ransack)
   def search
     @results = @q.result

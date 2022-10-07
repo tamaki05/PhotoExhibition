@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root :to => 'homes#top'
     get "about" => 'homes#about'
+    get 'exhibitions/ranking' => 'exhibitions#ranking'
     resources :exhibitions, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
       resource :favorites, only: [:create, :destroy]
       resources :comments, only: [:create, :destroy]
