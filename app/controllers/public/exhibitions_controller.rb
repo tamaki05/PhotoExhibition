@@ -1,6 +1,6 @@
 class Public::ExhibitionsController < ApplicationController
   # ログインしていないユーザーはログイン画面にリダイレクトする
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:ranking]
 
   def index
     @user = current_user
