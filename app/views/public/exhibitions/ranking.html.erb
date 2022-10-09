@@ -5,10 +5,14 @@
         <div class="center">
           <!--ランキング表示(with_index)で順位表示できる-->
           <% @exhibition.first(10).each.with_index(1) do |exhibition, i| %>
-            第<%= i %>位<br>
-            <%= link_to exhibition_path(exhibition.id) do %>
-              <%= image_tag exhibition.get_image(600,600) %><br>
+            <h6><第<%= i %>位></h6><br>
+            <%= link_to exhibition_path(exhibition.id), class: "link" do %>
+              <%= image_tag exhibition.get_image(600,600) %><br><br>
+              <%= image_tag exhibition.user.get_profile_image(600, 600), class: "rounded-circle", size: "50x50" %>
+              <%= exhibition.user.name %><br>
+              「<%= exhibition.title %>」<br>
             <% end %>
+            いいね数：<%= exhibition.favorites.count %><br><br><br>
           <% end %>
         </div>
     </div>
