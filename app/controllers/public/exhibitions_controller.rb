@@ -51,6 +51,7 @@ class Public::ExhibitionsController < ApplicationController
   end
 
   def ranking
+    @exhibition = Exhibition.includes(:favorited_users).sort {|a,b| b.favorited_users.size <=> a.favorited_users.size}
   end
 
   # 検索(ransack)
