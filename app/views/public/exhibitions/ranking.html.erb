@@ -3,7 +3,9 @@
     <div class="text-center">
       <h4><i class="fa-solid fa-ranking-star"></i>ランキング</h4><br><br>
         <div class="center">
-          <% @exhibition.first(10).each do |exhibition| %>
+          <!--ランキング表示(with_index)で順位表示できる-->
+          <% @exhibition.first(10).each.with_index(1) do |exhibition, i| %>
+            第<%= i %>位<br>
             <%= link_to exhibition_path(exhibition.id) do %>
               <%= image_tag exhibition.get_image(600,600) %><br>
             <% end %>
