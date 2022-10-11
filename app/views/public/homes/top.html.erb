@@ -9,7 +9,8 @@
     </h5><br><br>
     <h5 class="text-center">
       <% if user_signed_in? %>
-        <i class="fa-solid fa-image"></i>→<%= link_to '作品を投稿する', new_exhibition_path, class: "header-link" %>
+        <i class="fa-solid fa-image"></i>→<%= link_to '作品を投稿する', new_exhibition_path, class: "header-link" %><br>
+        <i class="fa-solid fa-clock"></i>→<%= link_to 'タイムライン', users_timeline_path, class: "header-link" %>
       <% else %>
         <p>※展示するには会員登録が必要です。<br>
           →<%= link_to "sign up", new_user_registration_path, class: "header-link" %></p>
