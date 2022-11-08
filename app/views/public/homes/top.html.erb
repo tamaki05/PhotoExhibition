@@ -7,17 +7,6 @@
         PhotoExhibitionはオンラインの写真展です。<br>
         ぜひ、たくさんの作品をご覧ください！
     </h5><br><br>
-    <h5 class="text-center">
-      <% if user_signed_in? %>
-        <i class="fa-solid fa-image"></i>→<%= link_to '作品を投稿する', new_exhibition_path, class: "header-link" %><br>
-        <i class="fa-solid fa-clock"></i>→<%= link_to 'タイムライン', users_timeline_path, class: "header-link" %>
-      <% else %>
-        <p>※展示するには会員登録が必要です。<br>
-          →<%= link_to "sign up", new_user_registration_path, class: "header-link" %></p>
-        <p>または、ログインしてください。<br>
-          →<%= link_to "log in", new_user_session_path, class: "header-link" %></p>
-      <% end %>
-    </h5><br><br>
 
     <div class="text-center">
       <i class="fa-solid fa-ranking-star"></i><%= link_to "ランキングを見る", exhibitions_ranking_path, class: "header-link" %><br>
@@ -34,7 +23,18 @@
             <% end %>
           </div>
         <% end %>
-      </ul>
+      </ul><br><br>
     </span></a></div>
+    <h5 class="text-center">
+      <% if user_signed_in? %>
+        <i class="fa-solid fa-image"></i>→<%= link_to '作品を投稿する', new_exhibition_path, class: "header-link" %><br>
+        <i class="fa-solid fa-clock"></i>→<%= link_to 'タイムライン', users_timeline_path, class: "header-link" %>
+      <% else %>
+        <p>※展示するには会員登録が必要です。<br>
+          →<%= link_to "sign up", new_user_registration_path, class: "header-link" %></p>
+        <p>または、ログインしてください。<br>
+          →<%= link_to "log in", new_user_session_path, class: "header-link" %></p>
+      <% end %>
+    </h5>
   </div>
 </div>
