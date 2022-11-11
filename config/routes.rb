@@ -44,6 +44,8 @@ Rails.application.routes.draw do
       end
     end
     resources :categories, only:[:index, :show]
+    resources :messages, only:[:create]
+    resources :rooms, only:[:create, :index, :show]
   end
 
 
