@@ -25,15 +25,14 @@
         <div id="follow_btn_<%= @user.id %>">
           <%= render "public/follow/follow", user: @user %>
         </div>
-        <!--unless @user.id == current_user.id-->
-        <!--  if @is_room == true-->
-        <!--    link_to 'メッセージを送る', room_path(@room_id)-->
-        <!--  else-->
-        <!--    form_for @room do |f|-->
-        <!--      fields_for @entry do |e|-->
-        <!--        e.hidden_field :user_id, value:@user.id-->
-        <!--      f.button type: :submit do-->
-        <!--        メッセージを送る-->
+
+        <div>
+          <% @user == current_user %>　<!--自分のページには表示しない-->
+            <p><% current_user.following?(@user) %>
+                <%= link_to "メッセージを送る", rooms_path %>
+            </p>
+        </div>
+
 
         <p><i class="fa-solid fa-comment"></i><br> <%= @user.profile %></p>
         <p><i class="fa-solid fa-arrow-up-right-from-square"></i><br> <%= @user.extemal_link %></p>
@@ -58,6 +57,7 @@
           <div class='row'>
             <%= link_to '', edit_user_path(@user) %>
         <% end %>
+          </div>
       </div>
     </div>
   </div>
