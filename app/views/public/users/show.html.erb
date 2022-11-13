@@ -29,7 +29,7 @@
         <div>
           <% @user == current_user %>　<!--自分のページには表示しない-->
             <p><% current_user.following?(@user) %>
-                <%= link_to "メッセージを送る", rooms_path %>
+                <%= link_to "メッセージを送る", rooms_path, class: "btn btn-outline-dark" %>
             </p>
         </div>
 
