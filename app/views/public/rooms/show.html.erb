@@ -33,6 +33,10 @@
               <% end %>
             <% end %>
         </table>
+        <%= form_with model:@message, url: '/messages', method: :post do |f| %>
+          <%= f.text_area :message, rows: '5', placeholder: "メッセージを入力", class: "form-control" %>
+          <%= f.submit '送信', class: "btn btn-sm btn-success" %>
+        <% end %>
       </div>
     </div>
   </div>
