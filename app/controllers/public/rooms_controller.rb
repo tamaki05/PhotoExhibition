@@ -8,6 +8,7 @@ class Public::RoomsController < ApplicationController
   end
 
   def index
+    @rooms = Room.all
   end
 
   def show
