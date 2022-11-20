@@ -5,9 +5,9 @@
         <div class="center">
           <% @exhibitions.each do |exhibition| %>
           <i class="far fa-clock clock-icon"></i><%= time_ago_in_words(exhibition.created_at) %>前<br><br>
+            <%= image_tag exhibition.user.get_profile_image(600, 600), class: "rounded-circle", size: "50x50" %>
+            <%= exhibition.user.name %><br><br>
             <%= link_to exhibition_path(exhibition.id), class: "link" do %>
-              <%= image_tag exhibition.user.get_profile_image(600, 600), class: "rounded-circle", size: "50x50" %>
-              <%= exhibition.user.name %><br><br>
               <%= image_tag exhibition.get_image(600,600), size: "200x200" %><br>
               <div class="text-center">
               「<%= exhibition.title %>」<br>
